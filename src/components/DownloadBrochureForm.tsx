@@ -1,7 +1,18 @@
+// DownloadBrochureForm.tsx
 import React, { useState } from 'react';
 import { Download, Mail, Phone, CheckCircle } from 'lucide-react';
 
-const DownloadBrochureForm: React.FC = () => {
+interface Course {
+  title: string;
+  brochureLink: string;
+}
+
+interface Props {
+  course: Course;
+  onClose: () => void;
+}
+
+const DownloadBrochureForm: React.FC<Props> = ({ course, onClose }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -10,81 +21,96 @@ const DownloadBrochureForm: React.FC = () => {
     profession: '',
     source: '',
     purpose: '',
-    subscribe: false
+    subscribe: false,
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-const handleInputChange = (
-  e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-) => {
-  const { name, value, type, checked } = e.target as HTMLInputElement; // TypeScript cast to HTMLInputElement
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    const { name, value, type } = e.target as HTMLInputElement;
+    const checked = (e.target as HTMLInputElement).checked;
 
-  setFormData((prev) => ({
-    ...prev,
-    [name]: type === 'checkbox' ? checked : value // handle checkbox and other inputs
-  }));
-};
-
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    // Submit the form data to the API
-    try {
-      const response = await fetch(
-        'https://99wtcgbrq4.execute-api.ap-south-1.amazonaws.com/brochur', 
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error('Failed to submit form');
-      }
-
-      const data = await response.json();
-      console.log('Form submitted successfully:', data);
-
-      setIsSubmitted(true);
-
-      // Reset form after 3 seconds
-      setTimeout(() => {
-        setIsSubmitted(false);
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          city: '',
-          profession: '',
-          source: '',
-          purpose: '',
-          subscribe: false,
-        });
-      }, 2500);
-
-    } catch (error) {
-      console.error('Error submitting the form:', error);
-    }
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value,
+    }));
   };
+
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (!formData.email) {
+    alert("Email is required");
+    return;
+  }
+
+  if (!course.brochureLink) {
+    alert("Brochure link is missing");
+    return;
+  }
+
+  // ✅ Convert Google Drive view link to direct download
+  const directDownloadUrl = course.brochureLink.replace('view?usp=drive_link', 'uc?export=download');
+
+  try {
+    // 1. Trigger direct download
+    window.open(directDownloadUrl, '_blank');
+
+    // 2. Send data to backend
+    const response = await fetch('https://i16pfadie3.execute-api.ap-south-1.amazonaws.com/postbrochurmail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...formData,
+        courseName: course.title,
+        brochureLink: course.brochureLink,
+      }),
+    });
+
+    if (!response.ok) throw new Error('Submission failed');
+
+    const result = await response.json();
+    console.log('Success:', result);
+
+    setIsSubmitted(true);
+
+    // Auto-close after 2.5 seconds
+    setTimeout(() => {
+      onClose();
+      setIsSubmitted(false);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        city: '',
+        profession: '',
+        source: '',
+        purpose: '',
+        subscribe: false,
+      });
+    }, 2500);
+
+  } catch (error) {
+    console.error('Error:', error);
+    alert("Failed to send brochure. Please try again.");
+  }
+};
 
   return (
     <div className="w-full p-3">
       {!isSubmitted ? (
         <>
-          {/* Header */}
           <div className="text-center mb-3">
-            <h2 className="text-xl font-bold text-gray-800">Download Our Course Brochure</h2>
+            <h2 className="text-xl font-bold text-gray-800">Download Brochure</h2>
             <p className="text-sm text-gray-500">
-              Get complete details about curriculum, duration, and certification
+              For: <strong>{course.title}</strong>
             </p>
           </div>
 
-          {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-2 text-sm">
             {[
               { id: 'name', type: 'text', placeholder: 'John Doe', label: 'Full Name *' },
@@ -102,7 +128,7 @@ const handleInputChange = (
                     type={type}
                     required
                     placeholder={placeholder}
-                    value={formData[id as keyof typeof formData]}
+                    value={formData[id as keyof typeof formData] as string}
                     onChange={handleInputChange}
                     className={`w-full ${Icon ? 'pl-9' : 'pl-3'} pr-3 py-[6px] text-sm border border-gray-300 rounded-md focus:ring-1 focus:ring-[#F15A24] focus:outline-none`}
                   />
@@ -110,7 +136,6 @@ const handleInputChange = (
               </div>
             ))}
 
-            {/* Profession */}
             <div>
               <label htmlFor="profession" className="text-xs font-medium text-gray-700 mb-0.5 block">
                 Profession / Industry *
@@ -134,7 +159,6 @@ const handleInputChange = (
               </select>
             </div>
 
-            {/* Source */}
             <div>
               <label htmlFor="source" className="text-xs font-medium text-gray-700 mb-0.5 block">
                 How did you hear about us? *
@@ -157,7 +181,6 @@ const handleInputChange = (
               </select>
             </div>
 
-            {/* Purpose */}
             <div>
               <label htmlFor="purpose" className="text-xs font-medium text-gray-700 mb-0.5 block">
                 Purpose of Download *
@@ -180,7 +203,6 @@ const handleInputChange = (
               </select>
             </div>
 
-            {/* Subscribe */}
             <div className="flex items-start space-x-2 -mt-1">
               <input
                 type="checkbox"
@@ -195,7 +217,6 @@ const handleInputChange = (
               </label>
             </div>
 
-            {/* Submit */}
             <button
               type="submit"
               className="w-full bg-[#F15A24] text-white font-bold py-2 text-sm rounded-md hover:bg-[#D64A1A] transition flex items-center justify-center"
