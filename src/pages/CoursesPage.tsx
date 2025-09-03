@@ -1,15 +1,67 @@
+// CoursesPage.tsx
 import React, { useState } from 'react';
 import { ArrowRight, Filter, Plane, Wheat, Users, Clock, Award, MapPin, Percent, Calendar, Settings, Download, Camera, Wrench, Monitor, Target, Zap, Building } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import DownloadBrochureForm from '../components/DownloadBrochureForm';
 
+// Define Course Interface
+interface Course {
+  id: number;
+  title: string;
+  Class: string;
+  badge: string;
+  badgeColor: string;
+  description: string;
+  duration: string;
+  price: string;
+  gst: string;
+  level: string;
+  icon: React.ComponentType<{ className?: string }>;
+  image: string;
+  link: string;
+  features: string[];
+  locations?: string[];
+  brochureLink: string; // NEW: Brochure Link
+}
+
 const CoursesPage: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState('All');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const navigate = useNavigate();
 
   const filters = ['All', 'DGCA Certified', 'Special Courses', 'Women Programs', 'Bundles', 'Online Training'];
 
-  const courses = [
+  // === 🔗 BROCHURE LINKS (Replace with your actual 24 Google Drive links) ===
+ const brochureLinks = [
+  "https://drive.google.com/uc?export=download&id=1tGU67V52WKHxVKL9Fn0419RDbos8U2ig",
+  "https://drive.google.com/uc?export=download&id=1-M9MjR5wevWnbl6cOgNjkAJaWJOQt4A0",
+  "https://drive.google.com/uc?export=download&id=1AgyhgmsTfvtFkS4WECPSUSal-k2JJPpp",
+  "https://drive.google.com/uc?export=download&id=1awStKoK6DFuSaxzDyNRzZi4VKkTA9pSc",
+  "https://drive.google.com/uc?export=download&id=10fBEsj61Xoco8_LifKASP3GCcXAkQvhN",
+  "https://drive.google.com/uc?export=download&id=1JU6quAZEtBEJji7OOsmpKC2zgLrkV0C8",
+  "https://drive.google.com/uc?export=download&id=1YfQBUrolKtkBVjPKLRUIiIQuSX_plzNy",
+  "https://drive.google.com/uc?export=download&id=1smRr950x59nawtcBBmEacrOsdDjJctNK",
+  "https://drive.google.com/uc?export=download&id=1SGBRoB5TKL5cumk-HayZco3Y3qyId7QH",
+  "https://drive.google.com/uc?export=download&id=10oAj_X_eGwyNMjGYkn3kFFOYbbhAyDcM",
+  "https://drive.google.com/uc?export=download&id=1rKeD4rrbo-Ey9eknFcbPvOGx592kCjB-",
+  "https://drive.google.com/uc?export=download&id=1HIqy78DRcJ3WubUX2D3R6bTn2XMnwRCV",
+  "https://drive.google.com/uc?export=download&id=1OwwgLedEObXhlRphzXnwHWdmNJUJzq6U",
+  "https://drive.google.com/uc?export=download&id=1OlAiHXm1Qci3yZ7t6zn-7wQJdiphePgQ",
+  "https://drive.google.com/uc?export=download&id=1tes2CDy8V0cRFBeOeK3f5Mp_UGNA7KSk",
+  "https://drive.google.com/uc?export=download&id=1k_pdtpoZAE1SQYrSZ0pudo17DiJrtkw3",
+  "https://drive.google.com/uc?export=download&id=1S8vtX65OtnZhV-BGo67YqnT1xV0rXipx",
+  "https://drive.google.com/uc?export=download&id=19r0FucXz10jJc6oTFDQFqr7j7OsypA7K",
+  "https://drive.google.com/uc?export=download&id=1gGJlRqtC4O9M3okEuwvQkP8sAUaJx14h",
+  "https://drive.google.com/uc?export=download&id=1BK_GTGIlpbZa5BkzRdeaSio6242lDdyr",
+  "https://drive.google.com/uc?export=download&id=1JMLwhJj3I3x4gqjy__ukhyXTsuuM5MO-",
+  "https://drive.google.com/uc?export=download&id=1PJohMsBEY8YSXvs1aQnuoB2gTSI_AHiA",
+  "https://drive.google.com/uc?export=download&id=1_gD-dMhpq5T4oaPh1XOTyGg10Mustw4i",
+  "https://drive.google.com/uc?export=download&id=1OoCn7RNNgZdqKti27FkBd8X3w3r8nR2-"
+];
+
+
+  const courses: Course[] = [
     {
       id: 1,
       title: 'DGCA Small Class',
@@ -25,7 +77,7 @@ const CoursesPage: React.FC = () => {
       image: '/dgca-small.jpg',
       link: '/courses/dgca-small',
       features: ['DGCA Certification', 'Theory & Practical', 'Job Assistance', 'Small Drone Operations'],
-
+      brochureLink: brochureLinks[0],
     },
     {
       id: 2,
@@ -42,7 +94,8 @@ const CoursesPage: React.FC = () => {
       image: '/dgca-medium.jpg',
       link: '/courses/dgca-medium',
       features: ['Medium Drone Ops', 'Advanced Training', 'Commercial License', 'Higher Payload'],
-      locations: ['Hyderabad',]
+      locations: ['Hyderabad'],
+      brochureLink: brochureLinks[1],
     },
     {
       id: 3,
@@ -59,7 +112,8 @@ const CoursesPage: React.FC = () => {
       image: '/medium-upgrade.jpg',
       link: '/courses/medium-upgrade',
       features: ['Quick Upgrade', 'Medium Class', 'Advanced Operations', 'Commercial Ready'],
-      locations: ['Hyderabad',]
+      locations: ['Hyderabad'],
+      brochureLink: brochureLinks[2],
     },
     {
       id: 4,
@@ -76,7 +130,8 @@ const CoursesPage: React.FC = () => {
       image: '/small-medium.jpg',
       link: '/courses/dgca-combined',
       features: ['Dual Certification', 'Complete Training', 'Best Value', 'All Categories'],
-      locations: ['Hyderabad']
+      locations: ['Hyderabad'],
+      brochureLink: brochureLinks[3],
     },
     {
       id: 5,
@@ -93,9 +148,9 @@ const CoursesPage: React.FC = () => {
       image: '/site-asset.jpg',
       link: '/courses/site-asset-inspection',
       features: ['Infrastructure Mapping', 'Utilities Inspection', 'Survey Tools', 'Road & Rail Monitoring'],
-      locations: ['Hyderabad']
+      locations: ['Hyderabad'],
+      brochureLink: brochureLinks[4],
     },
-
     {
       id: 6,
       title: 'Mining Excavation Volumetric Analysis',
@@ -111,9 +166,9 @@ const CoursesPage: React.FC = () => {
       image: '/mining.webp',
       link: '/courses/mining-excavation',
       features: ['Volumetric Analysis', 'Mining Monitoring', '3D Modeling', 'Drone Mapping'],
-      locations: ['Hyderabad']
+      locations: ['Hyderabad'],
+      brochureLink: brochureLinks[5],
     },
-
     {
       id: 7,
       title: 'Agriculture Crop Monitoring & Precision Farming',
@@ -129,9 +184,9 @@ const CoursesPage: React.FC = () => {
       image: '/agricrop-monitor.webp',
       link: '/courses/agriculture-precision',
       features: ['Spraying Techniques', 'Crop Monitoring', 'Agri Mapping', 'Flight Demos'],
-      locations: ['Hyderabad']
+      locations: ['Hyderabad'],
+      brochureLink: brochureLinks[6],
     },
-
     {
       id: 8,
       title: 'Aerial Cinematography',
@@ -147,9 +202,9 @@ const CoursesPage: React.FC = () => {
       image: '/aerial.avif',
       link: '/courses/aerial-cinematography',
       features: ['Cinematic Shots', 'Camera Gimbal Use', 'Creative Angles', 'Footage Editing'],
-      locations: ['Hyderabad']
+      locations: ['Hyderabad'],
+      brochureLink: brochureLinks[7],
     },
-
     {
       id: 9,
       title: 'Drone Survey & Data Processing',
@@ -165,7 +220,8 @@ const CoursesPage: React.FC = () => {
       image: '/dataprocessing.png',
       link: '/courses/data-processing',
       features: ['Orthomosaics', 'DEM/DSM', '3D Models', 'QGIS Export'],
-      locations: ['Hyderabad']
+      locations: ['Hyderabad'],
+      brochureLink: brochureLinks[8],
     },
     {
       id: 10,
@@ -182,9 +238,9 @@ const CoursesPage: React.FC = () => {
       image: '/repair-basic.jpg',
       link: '/courses/assembly-basic',
       features: ['Basic Soldering', 'Motor Setup', 'ESC Troubleshooting', 'Flight Performance Tuning'],
-      locations: ['Hyderabad']
+      locations: ['Hyderabad'],
+      brochureLink: brochureLinks[9],
     },
-
     {
       id: 11,
       title: 'Drone Assembly & Repair (Advanced)',
@@ -200,9 +256,9 @@ const CoursesPage: React.FC = () => {
       image: '/repair-advanced.jpg',
       link: '/courses/assembly-advanced',
       features: ['Advanced Soldering', 'ESC Tuning', 'IMU Calibration', 'Motor Testing'],
-      locations: ['Hyderabad']
+      locations: ['Hyderabad'],
+      brochureLink: brochureLinks[10],
     },
-
     {
       id: 12,
       title: 'Custom Training / Workshop for Institutes',
@@ -218,7 +274,8 @@ const CoursesPage: React.FC = () => {
       image: '/workshop1.jpg',
       link: '/courses/custom-training',
       features: ['Curriculum Design', 'Field Training', 'Certification', 'Project Work'],
-      locations: ['Hyderabad']
+      locations: ['Hyderabad'],
+      brochureLink: brochureLinks[11],
     },
     {
       id: 13,
@@ -235,9 +292,9 @@ const CoursesPage: React.FC = () => {
       image: '/fpv-basic.png',
       link: '/courses/fpv-basic',
       features: ['Line of Sight', 'Simulator Flying', 'Basic FPV Kit', 'Safety Protocols'],
-      locations: ['Hyderabad']
+      locations: ['Hyderabad'],
+      brochureLink: brochureLinks[12],
     },
-
     {
       id: 14,
       title: 'FPV Drone Training (Advanced)',
@@ -253,9 +310,9 @@ const CoursesPage: React.FC = () => {
       image: '/fpv-advanced.png',
       link: '/courses/fpv-advanced',
       features: ['Advanced Racing', 'Competition Prep', 'Professional Techniques', 'Performance Tuning'],
-      locations: ['Hyderabad']
+      locations: ['Hyderabad'],
+      brochureLink: brochureLinks[13],
     },
-
     {
       id: 15,
       title: 'Women Drone Pilot Bootcamp',
@@ -271,7 +328,8 @@ const CoursesPage: React.FC = () => {
       image: '/whyida.jpg',
       link: '/courses/women-bootcamp',
       features: ['Women-Only Batches', 'Mentorship', 'Career Guidance', 'Networking'],
-      locations: ['Hyderabad']
+      locations: ['Hyderabad'],
+      brochureLink: brochureLinks[14],
     },
     {
       id: 16,
@@ -288,9 +346,9 @@ const CoursesPage: React.FC = () => {
       image: '/whyida4.jpg',
       link: '/courses/drone-didi-agri',
       features: ['Women-Focused', 'Agriculture Training', 'Rural Empowerment', 'Practical Skills'],
-      locations: ['Hyderabad']
+      locations: ['Hyderabad'],
+      brochureLink: brochureLinks[15],
     },
-
     {
       id: 17,
       title: 'DGCA Medium + 3D Mapping',
@@ -306,7 +364,8 @@ const CoursesPage: React.FC = () => {
       image: '/medium-3d.webp',
       link: '/courses/dgca-mapping-bundle',
       features: ['Medium Class', '3D Mapping', 'Survey Techniques', 'Professional Skills'],
-      locations: ['Hyderabad']
+      locations: ['Hyderabad'],
+      brochureLink: brochureLinks[16],
     },
     {
       id: 18,
@@ -323,7 +382,8 @@ const CoursesPage: React.FC = () => {
       image: '/bundle.png',
       link: '/courses/ultimate-pro',
       features: ['Triple Certification', 'Complete Package', 'Professional Level', 'Career Ready'],
-      locations: ['Hyderabad']
+      locations: ['Hyderabad'],
+      brochureLink: brochureLinks[17],
     },
     {
       id: 19,
@@ -340,7 +400,8 @@ const CoursesPage: React.FC = () => {
       image: '/training-intern.jpg',
       link: '/courses/master-drone-tech',
       features: ['DGCA License', 'Photogrammetry', 'LiDAR & CAD', 'Internship Projects'],
-      locations: ['Hyderabad']
+      locations: ['Hyderabad'],
+      brochureLink: brochureLinks[18],
     },
     {
       id: 20,
@@ -357,7 +418,8 @@ const CoursesPage: React.FC = () => {
       image: '/mission.png',
       link: '/courses/advanced-missions',
       features: ['Orbit & Oblique', 'Payload Drop', 'Thermal Imaging', 'Sensor Setup'],
-      locations: ['Hyderabad']
+      locations: ['Hyderabad'],
+      brochureLink: brochureLinks[19],
     },
     {
       id: 21,
@@ -374,7 +436,8 @@ const CoursesPage: React.FC = () => {
       image: '/gis.png',
       link: '/courses/gis-analytics',
       features: ['CAD+GIS', 'Contours/TIN', 'X-Section Analysis', 'Alignment Modeling'],
-      locations: ['Hyderabad']
+      locations: ['Hyderabad'],
+      brochureLink: brochureLinks[20],
     },
     {
       id: 22,
@@ -391,7 +454,8 @@ const CoursesPage: React.FC = () => {
       image: '/simulator.png',
       link: '/courses/simulator-refresher',
       features: ['50 Hours Practice', 'Skill Enhancement', 'Emergency Scenarios', 'Flexible Schedule'],
-      locations: ['Online + Center Access']
+      locations: ['Online + Center Access'],
+      brochureLink: brochureLinks[21],
     },
     {
       id: 23,
@@ -408,7 +472,8 @@ const CoursesPage: React.FC = () => {
       image: '/online-class.png',
       link: '/courses/online-theory',
       features: ['Online Learning', 'Interactive Sessions', 'Self-Paced', 'Theory Foundation'],
-      locations: ['Online']
+      locations: ['Online'],
+      brochureLink: brochureLinks[22],
     },
     {
       id: 24,
@@ -430,9 +495,9 @@ const CoursesPage: React.FC = () => {
         'STEM Education Integration',
         'Drone Career Path Guidance'
       ],
-      locations: ['Pan India', 'On-campus Available']
+      locations: ['Pan India', 'On-campus Available'],
+      brochureLink: brochureLinks[23],
     }
-
   ];
 
   const filteredCourses = activeFilter === 'All'
@@ -451,19 +516,19 @@ const CoursesPage: React.FC = () => {
     navigate('/contact');
   };
 
-  const handleDownloadBrochure = () => {
-    // In a real app, this would trigger a download
-    console.log('Download brochure');
+  const openModal = (course: Course) => {
+    setSelectedCourse(course);
+    setIsModalOpen(true);
   };
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Add these functions to open and close the modal
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedCourse(null);
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header Spacer */}
-
 
       {/* Page Header */}
       <section className="pt-10 pb-10 bg-gradient-to-br from-gray-50 to-white">
@@ -497,12 +562,10 @@ const CoursesPage: React.FC = () => {
                 <Percent className="w-5 h-5 mr-1 text-[#26A65B]" />
                 <span>Combo Discount</span>
               </div>
-
             </div>
           </div>
         </div>
       </section>
-
 
       {/* Filters */}
       <section className="py-6 bg-white border-b border-gray-200">
@@ -513,7 +576,6 @@ const CoursesPage: React.FC = () => {
               <span className="text-gray-700 font-medium">Filter by Class:</span>
             </div>
 
-            {/* Filter Buttons */}
             <div className="flex gap-2 flex-wrap">
               {filters.map((filter) => (
                 <button
@@ -527,25 +589,15 @@ const CoursesPage: React.FC = () => {
                   {filter}
                 </button>
               ))}
-
-              {/* ✅ Curriculum Page Button */}
-              {/* <button
-                onClick={() => navigate('/curriculum')}
-                className="px-3 py-2 rounded-lg font-medium transition-all duration-200 bg-[#26A65B] text-white hover:bg-[#1e894b]"
-              >
-                Drone in Curriculum
-              </button> */}
             </div>
           </div>
 
-          {/* Results Count */}
           <div className="mt-2 text-gray-600">
             Showing {filteredCourses.length} course{filteredCourses.length !== 1 ? 's' : ''}
             {activeFilter !== 'All' && ` in ${activeFilter}`}
           </div>
         </div>
       </section>
-
 
       {/* Courses Grid */}
       <section className="py-8">
@@ -558,7 +610,6 @@ const CoursesPage: React.FC = () => {
                 style={{ animationDelay: `${index * 100}ms` }}
                 onClick={() => handleCourseClick(course.link)}
               >
-                {/* Course Image */}
                 <div className="relative h-48 overflow-hidden">
                   <img
                     src={course.image}
@@ -579,7 +630,6 @@ const CoursesPage: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Course Content */}
                 <div className="p-4 flex-1">
                   <div className="text-xs text-[#F15A24] font-bold mb-2">{course.Class}</div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">{course.title}</h3>
@@ -596,8 +646,8 @@ const CoursesPage: React.FC = () => {
                   </div>
                   <div className="mb-4">
                     <div className="flex gap-2 flex-wrap">
-                      {course.features.slice(0, 3).map((feature, index) => (
-                        <span key={index} className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
+                      {course.features.slice(0, 3).map((feature, idx) => (
+                        <span key={idx} className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
                           {feature}
                         </span>
                       ))}
@@ -608,7 +658,6 @@ const CoursesPage: React.FC = () => {
                   </div>
                 </div>
 
-                {/* CTA Buttons */}
                 <div className="flex gap-2 p-4">
                   <button
                     onClick={(e) => {
@@ -623,52 +672,44 @@ const CoursesPage: React.FC = () => {
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
-                      openModal(); // Open the modal when clicking the Brochure button
+                      openModal(course);
                     }}
                     className="flex-1 bg-white border border-[#F15A24] text-[#F15A24] hover:bg-[#F15A24] hover:text-white font-bold py-2 px-4 rounded-lg transition-all duration-200 flex items-center justify-center"
                   >
                     <Download className="w-4 h-4 mr-2" />
                     Brochure
                   </button>
-
-
                 </div>
               </div>
             ))}
 
-          </div>
-
-          {/* No Results */}
-          {filteredCourses.length === 0 && (
-            <div className="text-center py-12">
-              <div className="text-gray-400 mb-4">
-                <Filter className="w-16 h-16 mx-auto" />
+            {filteredCourses.length === 0 && (
+              <div className="text-center py-12 col-span-full">
+                <Filter className="w-16 h-16 mx-auto text-gray-400" />
+                <h3 className="text-xl font-bold text-gray-900 mb-2">No courses found</h3>
+                <p className="text-gray-600 mb-6">Try adjusting your filter or browse all courses.</p>
+                <button
+                  onClick={() => setActiveFilter('All')}
+                  className="bg-[#F15A24] text-white font-bold px-6 py-3 rounded-lg hover:bg-[#D64A1A] transition-colors duration-200"
+                >
+                  Show All Courses
+                </button>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">No courses found</h3>
-              <p className="text-gray-600 mb-6">Try adjusting your filter or browse all courses.</p>
-              <button
-                onClick={() => setActiveFilter('All')}
-                className="bg-[#F15A24] text-white font-bold px-6 py-3 rounded-lg hover:bg-[#D64A1A] transition-colors duration-200"
-              >
-                Show All Courses
-              </button>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </section>
 
-      {isModalOpen && (
+      {/* Modal */}
+      {isModalOpen && selectedCourse && (
         <>
-          {/* Background Overlay */}
           <div
             className="fixed inset-0 bg-black bg-opacity-50 z-40"
             onClick={closeModal}
           />
 
-          {/* Modal Content */}
           <div className="fixed inset-0 z-50 overflow-y-auto px-4 py-10">
             <div className="relative bg-white rounded-xl shadow-2xl w-full max-w-md sm:max-w-lg mx-auto p-4 sm:p-5 mt-24">
-              {/* Close Button */}
               <button
                 onClick={closeModal}
                 className="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-xl font-bold"
@@ -676,15 +717,14 @@ const CoursesPage: React.FC = () => {
                 &times;
               </button>
 
-              {/* Form */}
-              <DownloadBrochureForm />
+              <DownloadBrochureForm
+                course={selectedCourse}
+                onClose={closeModal}
+              />
             </div>
           </div>
         </>
       )}
-
-
-
 
       {/* Bottom CTA Section */}
       <section className="py-6 lg:py-10 bg-gradient-to-br from-orange-600 to-orange-400 text-white relative overflow-hidden">
@@ -709,8 +749,6 @@ const CoursesPage: React.FC = () => {
           </div>
         </div>
       </section>
-
-
     </div>
   );
 };
