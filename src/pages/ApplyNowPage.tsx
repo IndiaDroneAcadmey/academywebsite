@@ -52,32 +52,33 @@ const ApplyNowPage: React.FC = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  const courses = [
-    { value: 'dgca-small', label: 'DGCA Small Class (5 Days) - ₹45,000 + GST' },
-    { value: 'dgca-medium', label: 'DGCA Medium Class (5 Days) - ₹65,000 + GST' },
-    { value: 'medium-upgrade', label: 'Medium Upgrade (3 Days) - ₹45,000 + GST' },
-    { value: 'dgca-combined', label: 'Small + Medium Combined (8 Days) - ₹75,000 + GST' },
-    { value: 'agriculture-spraying', label: 'Agriculture Spraying (3 Days) - ₹25,000 + GST' },
-    { value: 'site-mapping', label: 'Site Asset Mapping (3 Days) - ₹35,000 + GST' },
-    { value: 'mining-analysis', label: 'Mining Excavation Analysis (3 Days) - ₹35,000 + GST' },
-    { value: 'aerial-cinematography', label: 'Aerial Cinematography (3 Days) - ₹25,000 + GST' },
-    { value: 'data-processing', label: 'Data Processing (3 Days) - ₹25,000 + GST' },
-    { value: 'drone-assembly-basic', label: 'Drone Assembly Basic (3 Days) - ₹25,000 + GST' },
-    { value: 'drone-assembly-advanced', label: 'Drone Assembly Advanced (5 Days) - ₹45,000 + GST' },
-    { value: 'fpv-basic', label: 'FPV Training Basic (3 Days) - ₹25,000 + GST' },
-    { value: 'fpv-advanced', label: 'FPV Training Advanced (5 Days) - ₹45,000 + GST' },
-    { value: 'women-bootcamp', label: 'Women Drone Pilot Bootcamp (5 Days) - ₹35,000 + GST' },
-    { value: 'drone-didi-agri', label: 'Drone-Didi Agri Program (3 Days) - ₹22,000 + GST' },
-    { value: 'dgca-cinematography-bundle', label: 'DGCA Small + Cinematography (8 Days) - ₹85,000 + GST' },
-    { value: 'dgca-mapping-bundle', label: 'DGCA Medium + 3D Mapping (8 Days) - ₹90,000 + GST' },
-    { value: 'ultimate-pro', label: 'Ultimate Pro Bundle (10 Days) - ₹115,000 + GST' },
-    { value: 'thermal-lidar', label: 'Thermal Inspection & LiDAR (3 Days) - ₹40,000 + GST' },
-    { value: 'bvlos', label: 'BVLOS Training (2 Days) - ₹30,000 + GST' },
-    { value: 'safety-incident', label: 'Drone Safety & Incident Response (2 Days) - ₹30,000 + GST' },
-    { value: 'simulator-refresher', label: 'Simulator Refresher (50 hrs) - ₹15,000 + GST' },
-    { value: 'online-theory', label: 'Online Theory Crash Course - ₹7,500 + GST' },
-    { value: 'corporate', label: 'Corporate Training (Flexible) - ₹25,000 + GST' }
-  ];
+const courses = [
+  { value: 'dgca-small', label: 'DGCA Small Class (5 Days)' },
+  { value: 'dgca-medium', label: 'DGCA Medium Class (5 Days)' },
+  { value: 'medium-upgrade', label: 'Medium Upgrade (3 Days)' },
+  { value: 'dgca-combined', label: 'Small + Medium Combined (8 Days)' },
+  { value: 'agriculture-spraying', label: 'Agriculture Spraying (3 Days)' },
+  { value: 'site-mapping', label: 'Site Asset Mapping (3 Days)' },
+  { value: 'mining-analysis', label: 'Mining Excavation Analysis (3 Days)' },
+  { value: 'aerial-cinematography', label: 'Aerial Cinematography (3 Days)' },
+  { value: 'data-processing', label: 'Data Processing (3 Days)' },
+  { value: 'drone-assembly-basic', label: 'Drone Assembly Basic (3 Days)' },
+  { value: 'drone-assembly-advanced', label: 'Drone Assembly Advanced (5 Days)' },
+  { value: 'fpv-basic', label: 'FPV Training Basic (3 Days)' },
+  { value: 'fpv-advanced', label: 'FPV Training Advanced (5 Days)' },
+  { value: 'women-bootcamp', label: 'Women Drone Pilot Bootcamp (5 Days)' },
+  { value: 'drone-didi-agri', label: 'Drone-Didi Agri Program (3 Days)' },
+  { value: 'dgca-cinematography-bundle', label: 'DGCA Small + Cinematography (8 Days)' },
+  { value: 'dgca-mapping-bundle', label: 'DGCA Medium + 3D Mapping (8 Days)' },
+  { value: 'ultimate-pro', label: 'Ultimate Pro Bundle (10 Days)' },
+  { value: 'thermal-lidar', label: 'Thermal Inspection & LiDAR (3 Days)' },
+  { value: 'bvlos', label: 'BVLOS Training (2 Days)' },
+  { value: 'safety-incident', label: 'Drone Safety & Incident Response (2 Days)' },
+  { value: 'simulator-refresher', label: 'Simulator Refresher (50 hrs)' },
+  { value: 'online-theory', label: 'Online Theory Crash Course' },
+  { value: 'corporate', label: 'Corporate Training (Flexible)' }
+];
+
   const allCourses = courses.map(c => c.label);
 
   const locations = [
