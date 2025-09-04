@@ -95,10 +95,7 @@ const CourseDetailPage: React.FC = () => {
                 <a href="/apply" className="bg-[#F15A24] text-white font-bold px-6 py-3 rounded-lg hover:bg-[#D64A1A] hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 text-center">
                   Apply Now
                 </a>
-                <button onClick={handleDownloadBrochure} className="bg-white text-[#F15A24] font-bold px-6 py-3 rounded-lg border-2 border-[#F15A24] hover:bg-[#F15A24] hover:text-white hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 text-center flex items-center justify-center">
-                  <Download className="w-4 h-4 mr-2" />
-                  Download Brochure
-                </button>
+           
               </div>
             </div>
 

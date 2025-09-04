@@ -208,7 +208,7 @@ const Header: React.FC = () => {
                 onClick={() => handleNavigation('/apply')}
                 className="bg-[#F15A24] text-white font-bold px-6 py-3 rounded-lg hover:bg-[#D64A1A] hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 text-sm"
               >
-                Apply Now
+                Apply for offers
               </button>
             </div>
 

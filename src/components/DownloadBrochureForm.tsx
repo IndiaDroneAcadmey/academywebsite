@@ -237,10 +237,10 @@ const handleSubmit = async (e: React.FormEvent) => {
           </div>
           <h3 className="text-base font-bold text-gray-900 mb-1">Success! Check Your Email</h3>
           <p className="text-sm text-gray-600 mb-2">
-            Your guide has been sent to your email. Also check WhatsApp!
+            Your guide has been sent to your email!
           </p>
           <div className="bg-[#26A65B] bg-opacity-10 rounded-md p-2.5 text-xs text-[#26A65B] font-medium">
-            📱 Our counselor will contact you soon to discuss your career goals.
+             Our counselor will contact you soon to discuss your career goals.
           </div>
         </div>
       )}
