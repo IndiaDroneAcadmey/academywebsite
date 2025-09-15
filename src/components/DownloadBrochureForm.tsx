@@ -9,10 +9,11 @@ interface Course {
 
 interface Props {
   course: Course;
+  isDownloadAll?: boolean;
   onClose: () => void;
 }
 
-const DownloadBrochureForm: React.FC<Props> = ({ course, onClose }) => {
+const DownloadBrochureForm: React.FC<Props> = ({ course, isDownloadAll = false, onClose }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -38,76 +39,79 @@ const DownloadBrochureForm: React.FC<Props> = ({ course, onClose }) => {
     }));
   };
 
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
 
-  if (!formData.email) {
-    alert("Email is required");
-    return;
-  }
+    if (!formData.email) {
+      alert("Email is required");
+      return;
+    }
 
-  if (!course.brochureLink) {
-    alert("Brochure link is missing");
-    return;
-  }
+    if (!course.brochureLink) {
+      alert("Brochure link is missing");
+      return;
+    }
 
-  // ✅ Convert Google Drive view link to direct download
-  const directDownloadUrl = course.brochureLink.replace('view?usp=drive_link', 'uc?export=download');
+    try {
+      // 1. Trigger download
+      const directDownloadUrl = course.brochureLink.replace('view?usp=drive_link', 'uc?export=download');
+      window.open(directDownloadUrl, '_blank');
 
-  try {
-    // 1. Trigger direct download
-    window.open(directDownloadUrl, '_blank');
-
-    // 2. Send data to backend
-    const response = await fetch('https://i16pfadie3.execute-api.ap-south-1.amazonaws.com/postbrochurmail', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        ...formData,
-        courseName: course.title,
-        brochureLink: course.brochureLink,
-      }),
-    });
-
-    if (!response.ok) throw new Error('Submission failed');
-
-    const result = await response.json();
-    console.log('Success:', result);
-
-    setIsSubmitted(true);
-
-    // Auto-close after 2.5 seconds
-    setTimeout(() => {
-      onClose();
-      setIsSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        city: '',
-        profession: '',
-        source: '',
-        purpose: '',
-        subscribe: false,
+      // 2. Send data to backend
+      const response = await fetch('https://i16pfadie3.execute-api.ap-south-1.amazonaws.com/postbrochurmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          courseName: isDownloadAll ? "All Course Brochures" : course.title,
+          brochureLink: course.brochureLink,
+          isDownloadAll: isDownloadAll,
+        }),
       });
-    }, 2500);
 
-  } catch (error) {
-    console.error('Error:', error);
-    alert("Failed to send brochure. Please try again.");
-  }
-};
+      if (!response.ok) throw new Error('Submission failed');
+
+      const result = await response.json();
+      console.log('Success:', result);
+
+      setIsSubmitted(true);
+
+      // Auto-close after 2.5 seconds
+      setTimeout(() => {
+        onClose();
+        setIsSubmitted(false);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          city: '',
+          profession: '',
+          source: '',
+          purpose: '',
+          subscribe: false,
+        });
+      }, 2500);
+
+    } catch (error) {
+      console.error('Error:', error);
+      alert("Failed to send brochure. Please try again.");
+    }
+  };
 
   return (
     <div className="w-full p-3">
       {!isSubmitted ? (
         <>
           <div className="text-center mb-3">
-            <h2 className="text-xl font-bold text-gray-800">Download Brochure</h2>
+            <h2 className="text-xl font-bold text-gray-800">
+              {isDownloadAll ? "Download All Brochures" : "Download Brochure"}
+            </h2>
             <p className="text-sm text-gray-500">
-              For: <strong>{course.title}</strong>
+              {isDownloadAll 
+                ? "Get complete information about all our drone training programs" 
+                : `For: ${course.title}`}
             </p>
           </div>
 
@@ -222,7 +226,7 @@ const handleSubmit = async (e: React.FormEvent) => {
               className="w-full bg-[#F15A24] text-white font-bold py-2 text-sm rounded-md hover:bg-[#D64A1A] transition flex items-center justify-center"
             >
               <Download className="w-4 h-4 mr-1" />
-              Send Me the Guide
+              {isDownloadAll ? "Download All Guides" : "Send Me the Guide"}
             </button>
 
             <p className="text-[10px] text-gray-500 text-center mt-1">
@@ -237,7 +241,9 @@ const handleSubmit = async (e: React.FormEvent) => {
           </div>
           <h3 className="text-base font-bold text-gray-900 mb-1">Success! Check Your Email</h3>
           <p className="text-sm text-gray-600 mb-2">
-            Your guide has been sent to your email!
+            {isDownloadAll 
+              ? "All brochures have been sent to your email!" 
+              : "Your guide has been sent to your email!"}
           </p>
           <div className="bg-[#26A65B] bg-opacity-10 rounded-md p-2.5 text-xs text-[#26A65B] font-medium">
              Our counselor will contact you soon to discuss your career goals.
