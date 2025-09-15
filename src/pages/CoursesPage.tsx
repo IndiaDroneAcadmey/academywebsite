@@ -21,45 +21,45 @@ interface Course {
   link: string;
   features: string[];
   locations?: string[];
-  brochureLink: string; // NEW: Brochure Link
+  brochureLink: string;
 }
 
 const CoursesPage: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
+  const [isDownloadAll, setIsDownloadAll] = useState(false);
   const navigate = useNavigate();
 
   const filters = ['All', 'DGCA Certified', 'Special Courses', 'Women Programs', 'Bundles', 'Online Training'];
 
-  // === 🔗 BROCHURE LINKS (Replace with your actual 24 Google Drive links) ===
- const brochureLinks = [
-  "https://drive.google.com/uc?export=download&id=1tGU67V52WKHxVKL9Fn0419RDbos8U2ig",
-  "https://drive.google.com/uc?export=download&id=1-M9MjR5wevWnbl6cOgNjkAJaWJOQt4A0",
-  "https://drive.google.com/uc?export=download&id=1AgyhgmsTfvtFkS4WECPSUSal-k2JJPpp",
-  "https://drive.google.com/uc?export=download&id=1awStKoK6DFuSaxzDyNRzZi4VKkTA9pSc",
-  "https://drive.google.com/uc?export=download&id=10fBEsj61Xoco8_LifKASP3GCcXAkQvhN",
-  "https://drive.google.com/uc?export=download&id=1JU6quAZEtBEJji7OOsmpKC2zgLrkV0C8",
-  "https://drive.google.com/uc?export=download&id=1YfQBUrolKtkBVjPKLRUIiIQuSX_plzNy",
-  "https://drive.google.com/uc?export=download&id=1smRr950x59nawtcBBmEacrOsdDjJctNK",
-  "https://drive.google.com/uc?export=download&id=1SGBRoB5TKL5cumk-HayZco3Y3qyId7QH",
-  "https://drive.google.com/uc?export=download&id=10oAj_X_eGwyNMjGYkn3kFFOYbbhAyDcM",
-  "https://drive.google.com/uc?export=download&id=1rKeD4rrbo-Ey9eknFcbPvOGx592kCjB-",
-  "https://drive.google.com/uc?export=download&id=1HIqy78DRcJ3WubUX2D3R6bTn2XMnwRCV",
-  "https://drive.google.com/uc?export=download&id=1OwwgLedEObXhlRphzXnwHWdmNJUJzq6U",
-  "https://drive.google.com/uc?export=download&id=1OlAiHXm1Qci3yZ7t6zn-7wQJdiphePgQ",
-  "https://drive.google.com/uc?export=download&id=1tes2CDy8V0cRFBeOeK3f5Mp_UGNA7KSk",
-  "https://drive.google.com/uc?export=download&id=1k_pdtpoZAE1SQYrSZ0pudo17DiJrtkw3",
-  "https://drive.google.com/uc?export=download&id=1S8vtX65OtnZhV-BGo67YqnT1xV0rXipx",
-  "https://drive.google.com/uc?export=download&id=19r0FucXz10jJc6oTFDQFqr7j7OsypA7K",
-  "https://drive.google.com/uc?export=download&id=1gGJlRqtC4O9M3okEuwvQkP8sAUaJx14h",
-  "https://drive.google.com/uc?export=download&id=1BK_GTGIlpbZa5BkzRdeaSio6242lDdyr",
-  "https://drive.google.com/uc?export=download&id=1JMLwhJj3I3x4gqjy__ukhyXTsuuM5MO-",
-  "https://drive.google.com/uc?export=download&id=1PJohMsBEY8YSXvs1aQnuoB2gTSI_AHiA",
-  "https://drive.google.com/uc?export=download&id=1_gD-dMhpq5T4oaPh1XOTyGg10Mustw4i",
-  "https://drive.google.com/uc?export=download&id=1OoCn7RNNgZdqKti27FkBd8X3w3r8nR2-"
-];
-
+  // === 🔗 BROCHURE LINKS (Direct download format) ===
+  const brochureLinks = [
+    "https://drive.google.com/uc?export=download&id=1tGU67V52WKHxVKL9Fn0419RDbos8U2ig",
+    "https://drive.google.com/uc?export=download&id=1-M9MjR5wevWnbl6cOgNjkAJaWJOQt4A0",
+    "https://drive.google.com/uc?export=download&id=1AgyhgmsTfvtFkS4WECPSUSal-k2JJPpp",
+    "https://drive.google.com/uc?export=download&id=1awStKoK6DFuSaxzDyNRzZi4VKkTA9pSc",
+    "https://drive.google.com/uc?export=download&id=10fBEsj61Xoco8_LifKASP3GCcXAkQvhN",
+    "https://drive.google.com/uc?export=download&id=1JU6quAZEtBEJji7OOsmpKC2zgLrkV0C8",
+    "https://drive.google.com/uc?export=download&id=1YfQBUrolKtkBVjPKLRUIiIQuSX_plzNy",
+    "https://drive.google.com/uc?export=download&id=1smRr950x59nawtcBBmEacrOsdDjJctNK",
+    "https://drive.google.com/uc?export=download&id=1SGBRoB5TKL5cumk-HayZco3Y3qyId7QH",
+    "https://drive.google.com/uc?export=download&id=10oAj_X_eGwyNMjGYkn3kFFOYbbhAyDcM",
+    "https://drive.google.com/uc?export=download&id=1rKeD4rrbo-Ey9eknFcbPvOGx592kCjB-",
+    "https://drive.google.com/uc?export=download&id=1HIqy78DRcJ3WubUX2D3R6bTn2XMnwRCV",
+    "https://drive.google.com/uc?export=download&id=1OwwgLedEObXhlRphzXnwHWdmNJUJzq6U",
+    "https://drive.google.com/uc?export=download&id=1OlAiHXm1Qci3yZ7t6zn-7wQJdiphePgQ",
+    "https://drive.google.com/uc?export=download&id=1tes2CDy8V0cRFBeOeK3f5Mp_UGNA7KSk",
+    "https://drive.google.com/uc?export=download&id=1k_pdtpoZAE1SQYrSZ0pudo17DiJrtkw3",
+    "https://drive.google.com/uc?export=download&id=1S8vtX65OtnZhV-BGo67YqnT1xV0rXipx",
+    "https://drive.google.com/uc?export=download&id=19r0FucXz10jJc6oTFDQFqr7j7OsypA7K",
+    "https://drive.google.com/uc?export=download&id=1gGJlRqtC4O9M3okEuwvQkP8sAUaJx14h",
+    "https://drive.google.com/uc?export=download&id=1BK_GTGIlpbZa5BkzRdeaSio6242lDdyr",
+    "https://drive.google.com/uc?export=download&id=1JMLwhJj3I3x4gqjy__ukhyXTsuuM5MO-",
+    "https://drive.google.com/uc?export=download&id=1PJohMsBEY8YSXvs1aQnuoB2gTSI_AHiA",
+    "https://drive.google.com/uc?export=download&id=1_gD-dMhpq5T4oaPh1XOTyGg10Mustw4i",
+    "https://drive.google.com/uc?export=download&id=1OoCn7RNNgZdqKti27FkBd8X3w3r8nR2-"
+  ];
 
   const courses: Course[] = [
     {
@@ -516,14 +516,16 @@ const CoursesPage: React.FC = () => {
     navigate('/contact');
   };
 
-  const openModal = (course: Course) => {
+  const openModal = (course: Course | null = null) => {
     setSelectedCourse(course);
+    setIsDownloadAll(!course); // Set to true if no course is passed (Download All)
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedCourse(null);
+    setIsDownloadAll(false);
   };
 
   return (
@@ -567,7 +569,7 @@ const CoursesPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Filters */}
+      {/* Filters and Download All Button */}
       <section className="py-6 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center gap-3">
@@ -589,6 +591,15 @@ const CoursesPage: React.FC = () => {
                   {filter}
                 </button>
               ))}
+              
+              {/* Download All Button - Added beside filters */}
+              <button
+                onClick={() => openModal(null)}
+                className="inline-flex items-center bg-[#26A65B] hover:bg-[#1e894b] text-white font-bold py-2 px-4 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
+              >
+                <Download className="w-4 h-4 mr-2" />
+                Download All
+              </button>
             </div>
           </div>
 
@@ -701,7 +712,7 @@ const CoursesPage: React.FC = () => {
       </section>
 
       {/* Modal */}
-      {isModalOpen && selectedCourse && (
+      {isModalOpen && (
         <>
           <div
             className="fixed inset-0 bg-black bg-opacity-50 z-40"
@@ -718,7 +729,11 @@ const CoursesPage: React.FC = () => {
               </button>
 
               <DownloadBrochureForm
-                course={selectedCourse}
+                course={selectedCourse || { 
+                  title: "All Course Brochures", 
+                  brochureLink: "https://drive.google.com/uc?export=download&id=11W0xyL1fqKaq__Dvt63K0Gcy6sHDafPc" 
+                }}
+                isDownloadAll={isDownloadAll}
                 onClose={closeModal}
               />
             </div>
