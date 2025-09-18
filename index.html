@@ -1,16 +1,128 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/index.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>India Drone Academy - Professional Drone Training</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<script type="module">
+  import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+
+  Chatbot.init({
+    chatflowid: "59b6625a-7edb-4bb6-b87c-7b8724bf65b4",   // your chatflow ID
+    apiHost: "https://srv1006227.hstgr.cloud",             // your hosted Flowise server
+    chatflowConfig: {},
+    observersConfig: {},
+    theme: {
+      button: {
+        backgroundColor: '#E84C21',      
+        right: 20,
+        bottom: 20,
+        size: 56,
+        dragAndDrop: true,
+        iconColor: '#ffffff',
+        customIconSrc: '/logoCube.png',
+        autoWindowOpen: {
+          autoOpen: true,
+          openDelay: 2,
+          autoOpenOnMobile: false
+        }
+      },
+      tooltip: {
+        showTooltip: true,
+        tooltipMessage: '👋 Hi, ask me about Drone Training!',
+        tooltipBackgroundColor: '#E84C21',
+        tooltipTextColor: '#ffffff',
+        tooltipFontSize: 15
+      },
+      disclaimer: {
+        title: 'Disclaimer',
+        message: "By using this chatbot, you agree to the <a target=\"_blank\" href=\"https://indiadroneacademy.com/terms\">Terms & Conditions</a>",
+        textColor: '#333333',
+        buttonColor: '#E84C21',
+        buttonText: 'Start Chatting',
+        buttonTextColor: '#ffffff',
+        blurredBackgroundColor: 'rgba(0, 0, 0, 0.5)',
+        backgroundColor: 'white'
+      },
+
+      /* ✅ This is the important part */
+      customCSS: `
+        .chatbot-window {
+          position: fixed !important;
+          top: 0 !important;
+          right: 0 !important;
+          width: 50% !important;      /* right half of page */
+          height: 100% !important;    /* full height */
+          border-radius: 0 !important; /* remove rounded corners */
+          box-shadow: 0 0 20px rgba(0,0,0,0.2);
+          font-family: 'Helvetica Neue', sans-serif;
+          z-index: 99999;
+        }
+
+        .chatbot-message {
+          border-radius: 12px;
+        }
+
+        .chatbot-button {
+          display: none !important; /* hide the floating round button */
+        }
+      `,
+
+      chatWindow: {
+        showTitle: true,
+        showAgentMessages: true,
+        title: 'India Drone Academy Assistant',
+        titleAvatarSrc: './logoCube.png',
+        welcomeMessage: '🚁 Welcome to India Drone Academy! How can I assist you today?',
+        errorMessage: '⚠️ Sorry, something went wrong. Please try again.',
+        backgroundColor: '#fafafa',
+        height: '100%', /* take full height */
+        width: '50%',   /* take half width */
+        fontSize: 16,
+        starterPrompts: [
+          "What drone courses are available?",
+          "Are you DGCA-approved?",
+          "What is the course fee?",
+          "Do you provide certification?"
+        ],
+        starterPromptFontSize: 15,
+        clearChatOnReload: false,
+        sourceDocsTitle: '📂 Sources:',
+        renderHTML: true,
+        botMessage: {
+          backgroundColor: '#FFF3EF',
+          textColor: '#333333',
+          showAvatar: true,
+          avatarSrc: './logoCube.png'
+        },
+        userMessage: {
+          backgroundColor: '#E84C21',
+          textColor: '#ffffff',
+          showAvatar: true,
+          avatarSrc: 'https://img.icons8.com/color/48/student-male--v1.png'
+        },
+        textInput: {
+          placeholder: 'Type your question about our academy...',
+          backgroundColor: '#ffffff',
+          textColor: '#333333',
+          sendButtonColor: '#E84C21',
+          maxChars: 200,
+          maxCharsWarningMessage: '⚠️ Please keep your message under 200 characters.',
+          autoFocus: true,
+          sendMessageSound: true,
+          sendSoundLocation: 'send_message.mp3',
+          receiveMessageSound: true,
+          receiveSoundLocation: 'receive_message.mp3'
+        },
+        feedback: {
+          color: '#E84C21'
+        },
+        dateTimeToggle: {
+          date: true,
+          time: true
+        },
+        footer: {
+          textColor: '#555555',
+          text: 'Powered by',
+          company: 'India Drone Academy',
+          companyLink: 'https://indiadroneacademy.com'
+        }
+      }
+    }
+  })
+</script>
+
