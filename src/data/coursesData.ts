@@ -398,7 +398,7 @@ export const coursesData: Record<string, CourseData> = {
     mode: 'Field Training + Software',
     certificate: 'Site Mapping Specialist',
     language: 'English / Hindi',
-    locations: ['Hyderabad', 'Bangalore', 'Mumbai'],
+    locations: ['Hyderabad'],
     level: 'Intermediate',
     learningOutcomes: [
       '3D mapping and photogrammetry',
@@ -562,7 +562,7 @@ export const coursesData: Record<string, CourseData> = {
   mode: 'Classroom + Field + Internship',
   certificate: 'Advanced Drone Technology & Internship',
   language: 'English / Hindi',
-  locations: ['Hyderabad', 'Bangalore'],
+  locations: ['Hyderabad'],
   level: 'Advanced',
   learningOutcomes: [
     'Hands-on DGCA drone pilot training',
@@ -737,7 +737,7 @@ export const coursesData: Record<string, CourseData> = {
   mode: 'Field + Simulation Training',
   certificate: 'Payload Mission Specialist',
   language: 'English / Hindi',
-  locations: ['Hyderabad', 'Bangalore'],
+  locations: ['Hyderabad'],
   level: 'Advanced',
   learningOutcomes: [
     'Payload mounting and drop missions',
@@ -820,13 +820,13 @@ export const coursesData: Record<string, CourseData> = {
   heroImage: '/gis.png',
   badge: 'Engineering',
   badgeColor: 'bg-green-600',
-  price: '₹30,000',
+  price: '₹45,000',
   gst: '+ 18% GST',
   duration: '5 Days',
   mode: 'Software + Field Training',
   certificate: 'Engineering GIS Specialist',
   language: 'English / Hindi',
-  locations: ['Hyderabad', 'Bangalore'],
+  locations: ['Hyderabad'],
   level: 'Intermediate to Advanced',
   learningOutcomes: [
     'Post-process drone data for civil engineering tasks',
@@ -915,7 +915,7 @@ export const coursesData: Record<string, CourseData> = {
   mode: 'Intensive Field + Classroom',
   certificate: 'Triple Certification (DGCA Medium, Cinematography, Mapping)',
   language: 'English / Hindi / Telugu',
-  locations: ['Hyderabad', 'Bangalore', 'Mumbai'],
+  locations: ['Hyderabad'],
   level: 'Comprehensive',
   learningOutcomes: [
     'DGCA medium Class drone certification',
@@ -1004,7 +1004,7 @@ export const coursesData: Record<string, CourseData> = {
   mode: 'Field + Software Training',
   certificate: 'DGCA Medium + 3D Mapping Certification',
   language: 'English / Hindi / Telugu',
-  locations: ['Hyderabad', 'Bangalore', 'Mumbai'],
+  locations: ['Hyderabad'],
   level: 'Intermediate to Advanced',
   learningOutcomes: [
     'DGCA Medium Class License training',
@@ -1176,7 +1176,7 @@ export const coursesData: Record<string, CourseData> = {
     mode: 'Software Training + Practical',
     certificate: 'Data Processing Specialist',
     language: 'English / Hindi',
-    locations: ['Hyderabad', 'Bangalore'],
+    locations: ['Hyderabad'],
     level: 'Intermediate',
     learningOutcomes: [
       'Professional data processing software',
@@ -1258,7 +1258,7 @@ export const coursesData: Record<string, CourseData> = {
     mode: 'Hands-on Workshop',
     certificate: 'Basic Drone Technician',
     language: 'English / Hindi',
-    locations: ['Hyderabad', 'Bangalore'],
+    locations: ['Hyderabad'],
     level: 'Beginner',
     learningOutcomes: [
       'Drone component identification',
@@ -1340,7 +1340,7 @@ export const coursesData: Record<string, CourseData> = {
     mode: 'Professional Workshop',
     certificate: 'Advanced Drone Technician',
     language: 'English / Hindi',
-    locations: ['Hyderabad', 'Bangalore'],
+    locations: ['Hyderabad'],
     level: 'Advanced',
     learningOutcomes: [
       'Advanced assembly techniques',
@@ -1422,7 +1422,7 @@ export const coursesData: Record<string, CourseData> = {
     mode: 'Practical + Simulator',
     certificate: 'FPV Pilot Basic',
     language: 'English / Hindi',
-    locations: ['Hyderabad', 'Bangalore'],
+    locations: ['Hyderabad'],
     level: 'Beginner',
     learningOutcomes: [
       'FPV system setup and operation',
@@ -1504,7 +1504,7 @@ export const coursesData: Record<string, CourseData> = {
     mode: 'Intensive Training + Competition',
     certificate: 'FPV Pilot Advanced',
     language: 'English / Hindi',
-    locations: ['Hyderabad', 'Bangalore'],
+    locations: ['Hyderabad'],
     level: 'Advanced',
     learningOutcomes: [
       'Advanced racing techniques',
@@ -1587,7 +1587,7 @@ export const coursesData: Record<string, CourseData> = {
     mode: 'Women-Only Batches + Mentorship',
     certificate: 'DGCA Small + Medium Class License',
     language: 'English / Hindi',
-    locations: ['Bangalore', 'Mumbai', 'Delhi', 'Hyderabad'],
+   locations: ['Hyderabad'],
     level: 'All Levels',
     learningOutcomes: [
       'Complete drone pilot certification',
@@ -1655,89 +1655,88 @@ export const coursesData: Record<string, CourseData> = {
       'Career mentorship included'
     ]
   },
-  'drone-didi-agri': {
-    id: 'drone-didi-agri',
-    title: 'Drone-Didi Agri Empowerment Program',
-    subtitle: 'Rural and Urban Women in Agriculture Technology',
-    description: 'Specialized agriculture program for rural and urban women focusing on precision farming and agri-entrepreneurship.',
-    heroImage: '/whyida4.jpg',
-    badge: 'Women Empowerment',
-    badgeColor: 'bg-green-500',
-    price: '₹22,000',
-    gst: '+ 18% GST',
-    originalPrice: '₹28,000',
-    duration: '3 Days',
-    mode: 'Field Training + Empowerment',
-    certificate: 'Drone-Didi Agriculture Specialist',
-    language: 'Hindi / Regional Languages',
-    locations: [ 'Hyderabad'],
-    level: 'Beginner Friendly',
-    learningOutcomes: [
-      'Agricultural drone operations',
-      'Crop monitoring techniques',
-      'Precision farming methods',
-      'Business development skills',
-      'Financial planning and management',
-      'Government scheme awareness',
-      'Community leadership',
-      'Sustainable farming practices'
-    ],
-    courseFeatures: [
-      {
-        icon: 'Wheat',
-        title: 'Agriculture Focus',
-        description: 'Specialized training for farming applications'
-      },
-      {
-        icon: 'Users',
-        title: 'Women Empowerment',
-        description: 'Focus on rural and urban women development'
-      },
-      {
-        icon: 'TrendingUp',
-        title: 'Business Skills',
-        description: 'Entrepreneurship and business development'
-      },
-      {
-        icon: 'Heart',
-        title: 'Community Support',
-        description: 'Ongoing community and mentorship support'
-      }
-    ],
-    batchDates: [
-      {
-        startDate: 'March 15, 2025',
-        endDate: 'March 17, 2025',
-        location: 'Pune',
-        seatsLeft: 12,
-        totalSeats: 20
-      }
-    ],
-    instructor: {
-      name: 'Dr. Sunita Devi',
-      image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=300',
-      title: 'Rural Development Expert',
-      experience: '15+ Years in Rural Empowerment',
-      description: 'Rural development specialist with extensive experience in women empowerment and agricultural technology adoption.',
-      credentials: ['Rural Development Expert', 'Women Empowerment Leader', 'Agriculture Specialist', 'Community Organizer']
+ 'drone-didi-agri': {
+  id: 'drone-didi-agri',
+  title: 'Drone-Didi Agri Program DGCA Small Class',
+  subtitle: 'Women in Agriculture Technology – DGCA Certified Training',
+  description: 'Government-certified training for small Class drones, tailored for women in agriculture, focusing on precision farming and agri-entrepreneurship.',
+  heroImage: '/dgca-small.jpg',  // You can replace this with the appropriate image
+  badge: 'Women Only',
+  badgeColor: 'bg-pink-600',
+  price: '₹35,000',
+  gst: '+ 18% GST',
+  originalPrice: '₹45,000', // Adjust this if necessary
+  duration: '5 Days',
+  mode: 'Field Training + Certification',
+  certificate: 'DGCA Certified Drone Pilot',
+  language: 'Hindi / Regional Languages',
+  locations: ['Hyderabad', 'Pune'], // Add more locations as needed
+  level: 'Beginner Friendly',
+  learningOutcomes: [
+    'DGCA Certified Training for Small Class Drones',
+    'Agricultural drone operations and management',
+    'Crop monitoring and precision farming techniques',
+    'Business development and entrepreneurship skills',
+    'Government schemes and funding awareness',
+    'Sustainable farming practices and technology adoption'
+  ],
+  courseFeatures: [
+    {
+      icon: 'Wheat',
+      title: 'Agriculture Focus',
+      description: 'Specialized training for drone applications in agriculture'
     },
-    faq: [
-      {
-        question: 'Is this program suitable for rural women?',
-        answer: 'Yes, this program is specifically designed for rural and urban women with focus on practical skills and business development.'
-      },
-      {
-        question: 'What support is provided after training?',
-        answer: 'Ongoing mentorship, business development support, access to government schemes, and community network connections.'
-      }
-    ],
-    highlights: [
-      'Women-focused agriculture training',
-      'Business development support',
-      'Community empowerment',
-      'Government scheme integration'
-    ]
+    {
+      icon: 'Users',
+      title: 'Women Empowerment',
+      description: 'Focus on empowering rural and urban women through technology'
+    },
+    {
+      icon: 'TrendingUp',
+      title: 'Entrepreneurship Skills',
+      description: 'Develop business and entrepreneurial skills for agricultural ventures'
+    },
+    {
+      icon: 'Heart',
+      title: 'Ongoing Support',
+      description: 'Community-based support with mentorship and business assistance'
+    }
+  ],
+  batchDates: [
+    {
+      startDate: 'March 15, 2025',
+      endDate: 'March 19, 2025',
+      location: 'Hyderabad',
+      seatsLeft: 12,
+      totalSeats: 20
+    }
+  ],
+  instructor: {
+    name: 'Dr. Sunita Devi',
+    image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=300',  // Replace with actual instructor image
+    title: 'Rural Development Expert & Drone Specialist',
+    experience: '15+ Years in Rural Empowerment and Agri-Tech',
+    description: 'An expert in rural development, Dr. Sunita Devi has vast experience in empowering women in agriculture through technology adoption.',
+    credentials: ['DGCA Certified Trainer', 'Agriculture Specialist', 'Women Empowerment Leader', 'Community Organizing Expert']
   },
+  faq: [
+    {
+      question: 'Is this program suitable for women from rural areas?',
+      answer: 'Yes, this program is specifically tailored for women in both rural and urban areas, with a focus on practical drone operations and business development.'
+    },
+    {
+      question: 'What certification will I receive after completing this course?',
+      answer: 'You will receive a DGCA certification for Small Class drones, along with the skills needed to operate drones in agricultural environments.'
+    }
+  ],
+  highlights: [
+    'DGCA Certified Training for Women in Agriculture',
+    'Empowerment and Business Development Focus',
+    'Practical Field Training and Mentorship',
+    'Access to Government Schemes and Funding Resources'
+  ]
+},
+
   'simulator-refresher': {
     id: 'simulator-refresher',
     title: 'Simulator Refresher (50 hrs)',
@@ -1752,7 +1751,7 @@ export const coursesData: Record<string, CourseData> = {
     mode: 'Simulator + Flexible Schedule',
     certificate: 'Simulator Proficiency Certificate',
     language: 'English / Hindi',
-    locations: ['Online + Center Access'],
+     locations: ['Hyderabad'],
     level: 'All Levels',
     learningOutcomes: [
       'Advanced flight scenarios',
@@ -1828,13 +1827,13 @@ export const coursesData: Record<string, CourseData> = {
     heroImage: '/online-class.png',
     badge: 'Online Learning',
     badgeColor: 'bg-green-500',
-    price: '₹7,500',
+    price: '₹15,000',
     gst: '+ 18% GST',
     duration: 'Self-Paced',
     mode: 'Online + Interactive Sessions',
     certificate: 'Theory Completion Certificate',
     language: 'English / Hindi',
-    locations: ['Online'],
+ locations: ['Hyderabad'],
     level: 'Beginner',
     learningOutcomes: [
       'DGCA regulations and compliance',
@@ -1916,7 +1915,7 @@ export const coursesData: Record<string, CourseData> = {
   mode: 'On-campus / Remote / Hybrid',
   certificate: 'Drone Awareness Participation Certificate',
   language: 'English / Hindi / Regional',
-  locations: ['Pan India', 'On-campus Available'],
+ locations: ['Hyderabad'],
   level: 'Beginner (K-12)',
   learningOutcomes: [
     'Introduction to drones and their real-world applications',
@@ -1984,6 +1983,166 @@ export const coursesData: Record<string, CourseData> = {
     'Ideal for school events and science fairs'
   ]
 },
+'2d-mapping': {
+  id: '2d-mapping',
+  title: 'DGCA 2D Mapping',
+  subtitle: 'Mastering the Basics of 2D Mapping with Drone Technology',
+  description: 'This course introduces students to the fundamentals of 2D mapping using drone technology, covering the key concepts and techniques for effective data collection and processing.',
+  heroImage: '/2dmapping.jpg',
+  badge: 'For Professionals',
+  badgeColor: 'bg-green-600',
+  price: '₹35,000',
+  gst: '+ 18% GST',
+  duration: '6 Days',
+  mode: 'Intensive Training',
+  certificate: 'DGCA 2D Mapping Certification',
+  language: 'English / Hindi / Regional',
+ locations: ['Hyderabad'],
+  level: 'Beginner to Intermediate',
+  learningOutcomes: [
+    'Introduction to 2D mapping and its applications in various industries',
+    'Understanding survey techniques and mapping software',
+    'Hands-on experience with drone-based 2D mapping projects',
+    'Awareness of industry standards and drone safety regulations',
+    'Boosting career prospects in surveying, mapping, and drone technology',
+    'Group-based drone exercises and challenges',
+    'Introduction to drone ethics and responsible usage in mapping'
+  ],
+  courseFeatures: [
+    {
+      icon: 'Drone',
+      title: '2D Mapping Demonstrations',
+      description: 'Live demos to showcase 2D mapping capabilities and drone usage in real-world projects'
+    },
+    {
+      icon: 'Gamepad',
+      title: 'Hands-on Mapping Experience',
+      description: 'Students fly drones and gather 2D mapping data under expert supervision'
+    },
+    {
+      icon: 'Book',
+      title: 'Industry-Relevant Tools',
+      description: 'Learn the best mapping tools and software used in the professional world'
+    },
+    {
+      icon: 'Rocket',
+      title: 'Career Exposure',
+      description: 'Exposure to career paths in mapping, surveying, and drone industries'
+    }
+  ],
+  batchDates: [
+    {
+      startDate: 'On Request',
+      endDate: '6 Days / Custom',
+      location: 'School Campus / Online',
+      seatsLeft: 50,
+      totalSeats: 50
+    }
+  ],
+  instructor: {
+    name: '2D Mapping Educator Team',
+    image: 'https://images.pexels.com/photos/1181319/pexels-photo-1181319.jpeg?auto=compress&cs=tinysrgb&w=300',
+    title: '2D Mapping & Drone Survey Instructors',
+    experience: '5+ Years in Mapping & Drone Technology',
+    description: 'Our instructors specialize in drone mapping, survey techniques, and geospatial data collection.',
+    credentials: ['DGCA Certified Trainers', 'Surveying Experts', 'Drone Mapping Professionals']
+  },
+  faq: [
+    {
+      question: 'Do students get to operate drones in this course?',
+      answer: 'Yes! Students will fly drones to collect 2D mapping data under expert supervision.'
+    },
+    {
+      question: 'Is this course suitable for beginners?',
+      answer: 'Yes! The course is designed for both beginners and those with some prior knowledge of drone technology.'
+    }
+  ],
+  highlights: [
+    'Hands-on drone flying experience for 2D mapping',
+    'Learn the latest mapping tools and techniques',
+    'Ideal for students interested in surveying, geospatial data, and drone technology'
+  ]
+},
+'3d-mapping': {
+  id: '3d-mapping',
+  title: 'DGCA 3D Mapping',
+  subtitle: 'Advanced Drone Techniques for 3D Mapping and Surveying',
+  description: 'This course provides in-depth training on using drones for 3D mapping and surveying, including data collection, processing, and real-world applications in industries like construction and agriculture.',
+  heroImage: '/3dmapping.jpg',
+  badge: 'For Professionals',
+  badgeColor: 'bg-blue-600',
+  price: '₹45,000',
+  gst: '+ 18% GST',
+  duration: '6 Days',
+  mode: 'Intensive Training',
+  certificate: 'DGCA 3D Mapping Certification',
+  language: 'English / Hindi / Regional',
+  locations: ['Hyderabad'],
+  level: 'Intermediate to Advanced',
+  learningOutcomes: [
+    'Comprehensive understanding of 3D mapping and its industrial applications',
+    'Hands-on experience in data collection and processing for 3D mapping projects',
+    'Learning to use specialized mapping software and tools for 3D models',
+    'In-depth knowledge of drone safety and regulations in mapping',
+    'Career enhancement in fields like construction, agriculture, and surveying',
+    'Collaborative group projects and real-world mapping challenges',
+    'Ethical use of drones and data privacy in 3D mapping'
+  ],
+  courseFeatures: [
+    {
+      icon: 'Drone',
+      title: '3D Mapping Demonstrations',
+      description: 'Live demonstrations of 3D mapping capabilities using drones for various industries'
+    },
+    {
+      icon: 'Gamepad',
+      title: 'Hands-on 3D Mapping Experience',
+      description: 'Students will operate drones to capture data for 3D models under expert supervision'
+    },
+    {
+      icon: 'Book',
+      title: 'Advanced Mapping Techniques',
+      description: 'Master advanced 3D mapping techniques with industry-standard tools'
+    },
+    {
+      icon: 'Rocket',
+      title: 'Career Exposure',
+      description: 'Learn about career paths in surveying, 3D mapping, construction, and more'
+    }
+  ],
+  batchDates: [
+    {
+      startDate: 'On Request',
+      endDate: '6 Days / Custom',
+      location: 'School Campus / Online',
+      seatsLeft: 50,
+      totalSeats: 50
+    }
+  ],
+  instructor: {
+    name: '3D Mapping Educator Team',
+    image: 'https://images.pexels.com/photos/1181319/pexels-photo-1181319.jpeg?auto=compress&cs=tinysrgb&w=300',
+    title: '3D Mapping & Drone Survey Instructors',
+    experience: '7+ Years in 3D Mapping & Drone Surveying',
+    description: 'Our instructors are experts in 3D mapping, using advanced drones and software for data collection and modeling.',
+    credentials: ['DGCA Certified Trainers', 'Surveying and Mapping Experts', '3D Modeling Professionals']
+  },
+  faq: [
+    {
+      question: 'Can I take this course if I have no experience in mapping?',
+      answer: 'This course is designed for those with basic knowledge of drones and mapping concepts.'
+    },
+    {
+      question: 'Will I learn how to process 3D data in this course?',
+      answer: 'Yes! Students will learn both data collection and 3D model creation using mapping software.'
+    }
+  ],
+  highlights: [
+    'Live drone demos for 3D mapping and surveying',
+    'Hands-on experience with industry-leading mapping tools',
+    'Perfect for professionals interested in advanced surveying and construction mapping'
+  ]
+},
 
   'site-asset-inspection': {
   id: 'site-inspection',
@@ -1999,7 +2158,7 @@ export const coursesData: Record<string, CourseData> = {
   mode: 'Practical + Mapping Tools',
   certificate: 'Site Inspection & Mapping Certificate',
   language: 'English / Hindi',
-  locations: ['Hyderabad', 'Bangalore'],
+  locations: ['Hyderabad'],
   level: 'Intermediate',
   learningOutcomes: [
     'Infrastructure inspection workflow',
@@ -2149,19 +2308,19 @@ export const coursesData: Record<string, CourseData> = {
 },
 'agriculture-precision': {
   id: 'agriculture-precision',
-  title: 'Agriculture Crop Monitoring & Precision Farming',
+  title: 'Agriculture Crop Monitoring & Precision Farming (Multi-Spectral)',
   subtitle: 'Precision spraying techniques for crop protection and optimized agriculture',
   description: 'This course trains participants in modern spraying techniques using drones for crop protection and field productivity. It combines flight skills with crop monitoring and mapping practices tailored for agriculture.',
   heroImage: '/agricrop-monitor.webp',
   badge: 'Special Courses',
   badgeColor: 'bg-green-600',
-  price: '₹25,000',
+  price: '₹45,000',
   gst: '+ 18% GST',
   duration: '3 Days',
   mode: 'On-field + Simulator',
   certificate: 'Agri Drone Spraying Certificate',
   language: 'English / Hindi / Telugu',
-  locations: ['Hyderabad', 'Bangalore'],
+  locations: ['Hyderabad'],
   level: 'Beginner Friendly',
   learningOutcomes: [
     'Basics of precision farming with drones',
@@ -2228,6 +2387,95 @@ export const coursesData: Record<string, CourseData> = {
     'Government-ready skills'
   ]
 },
+'thermal-lidar': {
+  id: 'thermal-lidar',
+  title: 'Thermal, LiDAR / Industrial, Pipeline / Corridor Inspections',
+  subtitle: 'Advanced Inspections Using Thermal Imaging, LiDAR, and Drone Technology',
+  description: 'This course trains participants in specialized inspections for industrial sites, pipelines, and corridors using thermal imaging, LiDAR, and drones. It combines advanced technology with hands-on field training for precise data collection and analysis.',
+  heroImage: '/thermal.jpg',  // Replace with appropriate image path
+  badge: 'Industrial',
+  badgeColor: 'bg-orange-600',
+  price: '₹45,000',
+  gst: '+ 18% GST',
+  duration: '4 Days',
+  mode: 'On-field + Classroom',
+  certificate: 'Thermal & LiDAR Inspection Certificate',
+  language: 'English / Hindi / Telugu',
+  locations: ['Hyderabad'],
+  level: 'Intermediate to Advanced',
+  learningOutcomes: [
+    'Thermal Imaging and LiDAR technology for industrial inspections',
+    'Pipeline and corridor inspections using drone technology',
+    'Advanced data collection and analysis techniques',
+    'Understanding safety protocols in industrial environments',
+    'Field training on real-world inspection scenarios',
+    'Processing and interpreting thermal and LiDAR data',
+    'Hands-on use of drones for mapping and inspections'
+  ],
+  courseFeatures: [
+    {
+      icon: 'Target',
+      title: 'Industrial Inspections',
+      description: 'Focus on inspecting industrial sites using advanced drone technology'
+    },
+    {
+      icon: 'Zap',
+      title: 'Thermal & LiDAR Technology',
+      description: 'In-depth knowledge of thermal and LiDAR technology applications'
+    },
+    {
+      icon: 'Pipeline',
+      title: 'Pipeline Inspections',
+      description: 'Techniques for inspecting pipelines and corridors using drones'
+    },
+    {
+      icon: 'BarChart',
+      title: 'Data Analysis',
+      description: 'Learn how to process and analyze inspection data for actionable insights'
+    }
+  ],
+  batchDates: [
+    {
+      startDate: 'April 10, 2025',
+      endDate: 'April 13, 2025',
+      location: 'Hyderabad',
+      seatsLeft: 10,
+      totalSeats: 15
+    },
+    {
+      startDate: 'April 17, 2025',
+      endDate: 'April 20, 2025',
+      location: 'Pune',
+      seatsLeft: 8,
+      totalSeats: 15
+    }
+  ],
+  instructor: {
+    name: 'Dr. Rajesh Kumar',
+    image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=300', // Replace with actual instructor image
+    title: 'LiDAR & Thermal Inspection Specialist',
+    experience: '20+ Years in Industrial Inspection and Drone Technology',
+    description: 'An expert in industrial inspections using advanced technologies, Dr. Rajesh Kumar has over 20 years of experience in LiDAR, thermal imaging, and drone-based inspection techniques.',
+    credentials: ['LiDAR Technology Expert', 'Thermal Imaging Specialist', 'Industrial Drone Trainer', 'Certified Safety Officer']
+  },
+  faq: [
+    {
+      question: 'What industries are covered in this program?',
+      answer: 'This program covers industrial inspections, pipeline inspections, and corridor mapping, all using cutting-edge thermal and LiDAR drone technology.'
+    },
+    {
+      question: 'Will I receive certification?',
+      answer: 'Yes, upon completion, you will receive a certification in LiDAR & Thermal Inspection from our accredited training center.'
+    }
+  ],
+  highlights: [
+    'Advanced Thermal and LiDAR Drone Training',
+    'Pipeline & Industrial Site Inspections',
+    'Hands-on Field Training and Certification',
+    'In-depth Data Analysis and Reporting Techniques'
+  ]
+},
+
 'assembly-basic': {
   id: 'assembly-basic',
   title: 'Drone Assembly & Repair (Basic)',
@@ -2242,7 +2490,7 @@ export const coursesData: Record<string, CourseData> = {
   mode: 'Hands-on + Lab Work',
   certificate: 'Basic Repair & Maintenance Certificate',
   language: 'English / Hindi',
-  locations: ['Hyderabad', 'Bangalore'],
+  locations: ['Hyderabad'],
   level: 'Beginner',
   learningOutcomes: [
     'Basic drone assembly and disassembly',
@@ -2323,7 +2571,7 @@ export const coursesData: Record<string, CourseData> = {
   mode: 'Hands-on + Lab Work',
   certificate: 'Advanced Repair & Maintenance Certificate',
   language: 'English / Hindi',
-  locations: ['Hyderabad', 'Bangalore'],
+  locations: ['Hyderabad'],
   level: 'Advanced',
   learningOutcomes: [
     'Drone electronics and wiring diagnosis',
@@ -2405,7 +2653,7 @@ export const coursesData: Record<string, CourseData> = {
   mode: 'On-site / Campus Workshop',
   certificate: 'Institutional Workshop Certificate',
   language: 'English / Hindi / Regional',
-  locations: ['Hyderabad', 'Bangalore'],
+  locations: ['Hyderabad'],
   level: 'Customized',
   learningOutcomes: [
     'Designing a drone curriculum for institutes',
