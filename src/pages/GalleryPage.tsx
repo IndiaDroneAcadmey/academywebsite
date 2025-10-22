@@ -28,6 +28,13 @@ const images: ImageItem[] = [
   { src: 'https://indiadroneacademy.s3.ap-south-1.amazonaws.com/IMG_9966.JPG', alt: '' },
   { src: 'https://indiadroneacademy.s3.ap-south-1.amazonaws.com/IMG_9952.JPG', alt: '' },
   { src: 'https://indiadroneacademy.s3.ap-south-1.amazonaws.com/IMG_9949.JPG', alt: '' },
+   { src: 'https://indiadroneacademy.s3.ap-south-1.amazonaws.com/MM089.jpg', alt: '' },
+   { src: 'https://indiadroneacademy.s3.ap-south-1.amazonaws.com/MM082.jpg', alt: '' },
+   { src: 'https://indiadroneacademy.s3.ap-south-1.amazonaws.com/MM033.jpg', alt: '' },
+   { src: 'https://indiadroneacademy.s3.ap-south-1.amazonaws.com/MM009.jpg', alt: '' },
+   { src: 'https://indiadroneacademy.s3.ap-south-1.amazonaws.com/IMG_20250920_104623.jpg', alt: '' },
+   { src: 'https://indiadroneacademy.s3.ap-south-1.amazonaws.com/IMG_20250920_104443.jpg', alt: '' },
+   { src: 'https://indiadroneacademy.s3.ap-south-1.amazonaws.com/MM036.jpg', alt: '' },
 ];
 
 /* ---------- helpers ---------- */
