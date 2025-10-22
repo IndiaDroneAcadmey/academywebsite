@@ -6,20 +6,49 @@ interface VideoItem {
 }
 
 const videos: VideoItem[] = [
-  { url: 'Z5_nStuyptA', title: 'Video 1: Drone Training Overview' },
-  { url: 'c-q1rJGiwXU', title: 'Video 2: UAV Technology in Action' },
-  { url: 'x_-QizYDmok', title: 'Video 3: Future of Drone Services' },
-  { url: 'tS-qlluXZDA', title: 'Video 4: Drone Pilots Training Session' },
-  { url: '3KWWiAdeBec', title: 'Video 5: How Drones are Transforming Industries' },
+  { url: 'https://youtu.be/gJgU3C2lRBQ?si=vRvV4lx77AbFU-Wf', title: 'Video 1: Drone Training Overview' },
+  { url: 'https://youtu.be/rTvNj8a1za0?si=_MruX5d81SqC6oUB', title: 'Video 2: UAV Technology in Action' },
+  { url: 'https://youtu.be/HpzQq4Eb_Uo?si=VLnwmtyI0WGlf0_7', title: 'Video 3: Future of Drone Services' },
+  { url: 'https://youtu.be/nv0KfNWg9v8', title: 'Video 4: Drone Pilots Training Session' },
+  { url: 'https://youtu.be/nsOzmDQBMKU', title: 'Video 5: How Drones are Transforming Industries' },
   { url: 'rTvNj8a1za0', title: 'Video 6: Introduction to Drone Technology' },
   { url: '5Jm8A3aw6O4', title: 'Video 7: Drone Applications in Agriculture' },
 ];
+
+// Extract a YouTube video ID from various URL formats or return the input if it's already an ID
+const getYouTubeId = (input: string): string => {
+  try {
+    // If it's already a clean ID (11 chars common), return as-is
+    if (/^[a-zA-Z0-9_-]{10,}$/.test(input) && !input.includes('http')) {
+      return input;
+    }
+
+    const url = new URL(input);
+    // youtu.be/<id>
+    if (url.hostname.includes('youtu.be')) {
+      return url.pathname.replace('/', '').split('/')[0];
+    }
+    // youtube.com/watch?v=<id>
+    const v = url.searchParams.get('v');
+    if (v) return v;
+    // youtube.com/embed/<id>
+    const parts = url.pathname.split('/');
+    const embedIndex = parts.indexOf('embed');
+    if (embedIndex !== -1 && parts[embedIndex + 1]) {
+      return parts[embedIndex + 1];
+    }
+  } catch {
+    // If constructing URL fails, fall through and return input trimmed of extra params
+  }
+  // Remove common extra params if present
+  return input.split('?')[0].split('&')[0];
+};
 
 const VideoPage: React.FC = () => {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   const handleVideoSelect = (url: string) => {
-    setSelectedVideo(url);
+    setSelectedVideo(getYouTubeId(url));
   };
 
   return (
@@ -38,7 +67,7 @@ const VideoPage: React.FC = () => {
               <iframe
                 width="100%"
                 height="100%"
-                src={`https://www.youtube.com/embed/${video.url}`}
+                src={`https://www.youtube.com/embed/${getYouTubeId(video.url)}?rel=0&modestbranding=1`}
                 title={video.title}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -58,7 +87,7 @@ const VideoPage: React.FC = () => {
             <iframe
               width="100%"
               height="500"
-              src={`https://www.youtube.com/embed/${selectedVideo}`}
+              src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1&rel=0&modestbranding=1`}
               title="Selected Video"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
