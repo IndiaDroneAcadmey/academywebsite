@@ -11,7 +11,7 @@ const videos: VideoItem[] = [
   { url: 'https://youtu.be/HpzQq4Eb_Uo?si=VLnwmtyI0WGlf0_7', title: 'Video 3: Future of Drone Services' },
   { url: 'https://youtu.be/nv0KfNWg9v8', title: 'Video 4: Drone Pilots Training Session' },
   { url: 'https://youtu.be/nsOzmDQBMKU', title: 'Video 5: How Drones are Transforming Industries' },
-  { url: 'rTvNj8a1za0', title: 'Video 6: Introduction to Drone Technology' },
+  { url: 'https://youtu.be/ecpXVrm-YiQ', title: 'Video 6: Introduction to Drone Technology' },
   { url: '5Jm8A3aw6O4', title: 'Video 7: Drone Applications in Agriculture' },
 ];
 
