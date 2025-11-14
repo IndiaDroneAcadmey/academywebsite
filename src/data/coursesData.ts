@@ -1660,7 +1660,7 @@ export const coursesData: Record<string, CourseData> = {
   title: 'Drone-Didi Agri Program DGCA Small Class',
   subtitle: 'Women in Agriculture Technology – DGCA Certified Training',
   description: 'Government-certified training for small Class drones, tailored for women in agriculture, focusing on precision farming and agri-entrepreneurship.',
-  heroImage: '/dgca-small.jpg',  // You can replace this with the appropriate image
+  heroImage: '/whyida4.jpg',  // You can replace this with the appropriate image
   badge: 'Women Only',
   badgeColor: 'bg-pink-600',
   price: '₹35,000',
