@@ -106,14 +106,30 @@ const Header: React.FC = () => {
                   </li>
                 ))}
 
+
+
+
+                {/*only collaboration*/}
+
+                <li className="relative">
+  <button
+    onClick={() => handleNavigation('/collaborate')}
+    className="font-medium text-sm hover:text-[#26A65B] transition-colors duration-200 relative group"
+  >
+    Collaborations
+    <span className="absolute -bottom-1 left-0 h-0.5 bg-[#26A65B] transition-all duration-200 w-0 group-hover:w-full" />
+  </button>
+</li>
+
+
                 {/* Collaborations Dropdown */}
-                <li ref={collaborateDropdownRef} className="relative">
+                {/* <li ref={collaborateDropdownRef} className="relative">
                   <button
                     onClick={handleCollaborateDropdownToggle}
                     className="font-medium text-sm hover:text-[#26A65B] transition-colors duration-200 relative group"
                   >
-                    Collaborations
-                    <span
+                    Collaborations */}
+                    {/* <span
                       className={`absolute -bottom-1 left-0 h-0.5 bg-[#26A65B] transition-all duration-200 ${isCollaborateDropdownOpen ? 'w-full' : 'w-0 group-hover:w-full'}`}
                     />
                   </button>
@@ -137,9 +153,9 @@ const Header: React.FC = () => {
                         className="block px-4 py-2 text-black text-sm hover:text-[#26A65B] hover:bg-gray-100 w-full text-left"
                       >
                         Apply for Internship
-                      </button>
+                      </button> */}
                       {/* NEW: Apply for Workshop */}
-                      <button
+                      {/* <button
                         onClick={() => {
                           handleNavigation('/applyworkshop');
                           setIsCollaborateDropdownOpen(false);
@@ -150,7 +166,7 @@ const Header: React.FC = () => {
                       </button>
                     </div>
                   )}
-                </li>
+                </li> */}
 
                 {/* Contact */}
                 <li>
