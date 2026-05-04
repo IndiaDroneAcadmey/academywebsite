@@ -90,7 +90,7 @@ const Header: React.FC = () => {
               </button>
             </div>
 
-            <nav className="hidden lg:flex" aria-label="Main Navigation">
+            <nav className="hidden lg:flex lg:ml-12" aria-label="Main Navigation">
               <ul className="flex items-center space-x-8">
                 {navLinks.slice(0, 5).map((link) => (
                   <li key={link.href}>
@@ -112,14 +112,14 @@ const Header: React.FC = () => {
                 {/*only collaboration*/}
 
                 <li className="relative">
-  <button
-    onClick={() => handleNavigation('/collaborate')}
-    className="font-medium text-sm hover:text-[#26A65B] transition-colors duration-200 relative group"
-  >
-    Collaborations
-    <span className="absolute -bottom-1 left-0 h-0.5 bg-[#26A65B] transition-all duration-200 w-0 group-hover:w-full" />
-  </button>
-</li>
+                  <button
+                    onClick={() => handleNavigation('/collaborate')}
+                    className="font-medium text-sm hover:text-[#26A65B] transition-colors duration-200 relative group"
+                  >
+                    Collaborations
+                    <span className="absolute -bottom-1 left-0 h-0.5 bg-[#26A65B] transition-all duration-200 w-0 group-hover:w-full" />
+                  </button>
+                </li>
 
 
                 {/* Collaborations Dropdown */}
@@ -129,7 +129,7 @@ const Header: React.FC = () => {
                     className="font-medium text-sm hover:text-[#26A65B] transition-colors duration-200 relative group"
                   >
                     Collaborations */}
-                    {/* <span
+                {/* <span
                       className={`absolute -bottom-1 left-0 h-0.5 bg-[#26A65B] transition-all duration-200 ${isCollaborateDropdownOpen ? 'w-full' : 'w-0 group-hover:w-full'}`}
                     />
                   </button>
@@ -154,8 +154,8 @@ const Header: React.FC = () => {
                       >
                         Apply for Internship
                       </button> */}
-                      {/* NEW: Apply for Workshop */}
-                      {/* <button
+                {/* NEW: Apply for Workshop */}
+                {/* <button
                         onClick={() => {
                           handleNavigation('/applyworkshop');
                           setIsCollaborateDropdownOpen(false);
@@ -216,12 +216,13 @@ const Header: React.FC = () => {
                     </div>
                   )}
                 </li>
+
               </ul>
             </nav>
 
-            <div className="hidden lg:flex items-center space-x-4">
+            <div className="hidden lg:flex items-center space-x-4 lg:ml-12">
               <button
-                onClick={() => handleNavigation('/apply')}
+                onClick={() => handleNavigation('/offers')}
                 className="bg-[#F15A24] text-white font-bold px-6 py-3 rounded-lg hover:bg-[#D64A1A] hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 text-sm"
               >
                 Apply for offers
@@ -348,12 +349,13 @@ const Header: React.FC = () => {
                   </div>
                 )}
               </li>
+
             </ul>
           </nav>
 
           <div className="p-6 border-t border-gray-200 bg-gray-50">
             <button
-              onClick={() => handleNavigation('/apply')}
+              onClick={() => handleNavigation('/offers')}
               className="w-full bg-[#F15A24] text-white font-bold px-6 py-4 rounded-lg hover:bg-[#D64A1A] hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 text-center text-lg"
             >
               Apply Now

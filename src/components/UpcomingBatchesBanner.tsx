@@ -102,7 +102,7 @@ const UpcomingBatchesBanner: React.FC = () => {
   };
 
   return (
-    <section className="py-10 lg:py-16 bg-white">
+    <section id="batches" className="py-10 lg:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Banner */}
         <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl p-6 lg:p-10 mb-10">
