@@ -22,6 +22,7 @@ import GalleryPage from './pages/GalleryPage';
 import VideoPage from './pages/VideoPage';
 import InternshipPage from './pages/InternshipPage';
 import WorkshopRegistrationPage from './pages/WorkshopRegistrationPage';
+import Batches100Page from './pages/Batches100Page';
 //added
 function App() {
   return (
@@ -44,11 +45,12 @@ function App() {
           <Route path="/sitemap" element={<SitemapPage />} />
           <Route path="/collaborate" element={<CollaborationPage />} />
           <Route path="/partnerships" element={<PartnershipsPage />} />
-            <Route path="/curriculum" element={<CurriculumPage />} />
-                   <Route path="/gallery" element={<GalleryPage />} />
-                     <Route path="/video" element={<VideoPage/>} />
-                      <Route path="/applyintern" element={<InternshipPage/>} />
-                      <Route path="/applyworkshop" element={<WorkshopRegistrationPage/>} />
+          <Route path="/curriculum" element={<CurriculumPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/video" element={<VideoPage />} />
+          <Route path="/applyintern" element={<InternshipPage />} />
+          <Route path="/applyworkshop" element={<WorkshopRegistrationPage />} />
+          <Route path="/offers" element={<Batches100Page />} />
         </Routes>
         <Footer />
       </div>
