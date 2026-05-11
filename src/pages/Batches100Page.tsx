@@ -28,7 +28,7 @@ export default function Batches100Page() {
       //    integration points need to be added.
       // =========================================================
 
-      const RAZORPAY_KEY_ID = "rzp_test_REPLACE_WITH_YOUR_KEY_ID";
+      const RAZORPAY_KEY_ID = "rzp_live_Sm0GPcZ5M8emd8";
       const REGISTRATION_AMOUNT_PAISE = 200000; // Rs. 2,000 = 200000 paise
       const COMPANY_LOGO_URL = "https://indiadroneacademy.com/logo.png"; // Replace with hosted logo URL
 
@@ -341,10 +341,10 @@ export default function Batches100Page() {
         </div>
 
         <div class="offer-benefit">
-          <div class="offer-benefit-line">Centennial benefit unlocked</div>
-          <div class="offer-benefit-amount">Rs. 20,000<span>off the full course fee</span></div>
+          <div class="offer-benefit-line">Special Offer Price</div>
+          <div class="offer-benefit-amount">Rs. 15,000<span>full course fee</span></div>
           <div style="font-size: 13px; color: var(--mute); margin-top: 8px;">
-            Original Price: <span style="text-decoration: line-through;">Rs. 35,000</span> &middot; Offer Price: <strong>Rs. 15,000</strong>
+            Original Price: <span style="text-decoration: line-through;">Rs. 35,000</span> &middot; Savings: <strong>Rs. 20,000</strong>
           </div>
         </div>
 
@@ -371,8 +371,11 @@ export default function Batches100Page() {
         </div>
 
         <div class="offer-benefit">
-          <div class="offer-benefit-line">Centennial benefit unlocked</div>
-          <div class="offer-benefit-amount">Rs. 18,000<span>off the full course fee</span></div>
+          <div class="offer-benefit-line">Special Offer Price</div>
+          <div class="offer-benefit-amount">Rs. 18,000<span>full course fee</span></div>
+          <div style="font-size: 13px; color: var(--mute); margin-top: 8px;">
+            Original Price: <span style="text-decoration: line-through;">Rs. 45,000</span> &middot; Savings: <strong>Rs. 27,000</strong>
+          </div>
         </div>
 
         <ul class="offer-includes">
@@ -393,13 +396,16 @@ export default function Batches100Page() {
         <p class="offer-card-cat">Become a certified DGCA drone training instructor. Designed for experienced pilots who want to teach, mentor and build the next generation of drone professionals.</p>
 
         <div class="offer-pricing">
-          <div class="offer-pay">Rs. 45,000</div>
-          <div class="offer-pay-label">full course fee</div>
+          <div class="offer-pay">Rs. 2,000</div>
+          <div class="offer-pay-label">to register</div>
         </div>
 
         <div class="offer-benefit">
-          <div class="offer-benefit-line">Centennial benefit unlocked</div>
-          <div class="offer-benefit-amount">Rs. 2,000<span>to register &amp; lock seat</span></div>
+          <div class="offer-benefit-line">Special Offer Price</div>
+          <div class="offer-benefit-amount">Rs. 45,000<span>full course fee</span></div>
+          <div style="font-size: 13px; color: var(--mute); margin-top: 8px;">
+            Original Price: <span style="text-decoration: line-through;">Rs. 65,000</span> &middot; Savings: <strong>Rs. 20,000</strong>
+          </div>
         </div>
 
         <ul class="offer-includes">
@@ -420,13 +426,16 @@ export default function Batches100Page() {
         <p class="offer-card-cat">Mandatory periodic refresher for certified drone trainers. Stay current with the latest DGCA regulations, updated syllabus and evolving industry standards.</p>
 
         <div class="offer-pricing">
-          <div class="offer-pay">Rs. 15,000</div>
-          <div class="offer-pay-label">full course fee</div>
+          <div class="offer-pay">Rs. 2,000</div>
+          <div class="offer-pay-label">to register</div>
         </div>
 
         <div class="offer-benefit">
-          <div class="offer-benefit-line">Centennial benefit unlocked</div>
-          <div class="offer-benefit-amount">Rs. 2,000<span>to register &amp; lock seat</span></div>
+          <div class="offer-benefit-line">Special Offer Price</div>
+          <div class="offer-benefit-amount">Rs. 15,000<span>full course fee</span></div>
+          <div style="font-size: 13px; color: var(--mute); margin-top: 8px;">
+            Original Price: <span style="text-decoration: line-through;">Rs. 25,000</span> &middot; Savings: <strong>Rs. 10,000</strong>
+          </div>
         </div>
 
         <ul class="offer-includes">
@@ -569,28 +578,28 @@ export default function Batches100Page() {
                 <input type="radio" name="category" value="Small" checked>
                 <div class="radio-card-inner">
                   <strong>Small Category</strong>
-                  <span>Up to 25 kg &middot; Rs. 20,000 benefit</span>
+                  <span>Up to 25 kg &middot; Rs. 15,000 Offer</span>
                 </div>
               </label>
               <label class="radio-card">
                 <input type="radio" name="category" value="Medium">
                 <div class="radio-card-inner">
                   <strong>Medium Category</strong>
-                  <span>25 to 150 kg &middot; Rs. 18,000 benefit</span>
+                  <span>25 to 150 kg &middot; Rs. 18,000 Offer</span>
                 </div>
               </label>
               <label class="radio-card">
                 <input type="radio" name="category" value="TTT">
                 <div class="radio-card-inner">
                   <strong>Train the Trainer (TTT)</strong>
-                  <span>Full course &middot; Rs. 45,000</span>
+                  <span>Full course &middot; Rs. 45,000 Offer</span>
                 </div>
               </label>
               <label class="radio-card">
                 <input type="radio" name="category" value="TrainerRefresh">
                 <div class="radio-card-inner">
                   <strong>Trainer Refreshment</strong>
-                  <span>2-day intensive &middot; Rs. 15,000</span>
+                  <span>2-day intensive &middot; Rs. 15,000 Offer</span>
                 </div>
               </label>
             </div>
@@ -612,7 +621,7 @@ export default function Batches100Page() {
               <span>Registration amount</span>
               <strong>Rs. 2,000</strong>
             </div>
-            <div class="summary-note">Adjusted against course fee on joining. Centennial discount of Rs. 20,000 (Small) / Rs. 18,000 (Medium) applied to your final balance.</div>
+            <div class="summary-note">Adjusted against course fee on joining. Centennial offer prices (Small: Rs. 15k / Medium: Rs. 18k / TTT: Rs. 45k / Refreshment: Rs. 15k) locked with this registration.</div>
           </div>
 
           <button type="submit" id="payBtn" class="form-submit">
