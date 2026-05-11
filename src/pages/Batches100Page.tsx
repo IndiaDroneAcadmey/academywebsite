@@ -259,7 +259,7 @@ export default function Batches100Page() {
           The movement <em>continues.</em>
         </h1>
         <p class="hero-sub">
-          India Drone Academy has crossed a milestone that very few drone training organisations in the country can claim. To mark it, we are opening a limited window for the next intake at a benefit of up to Rs. 15,000.
+          India Drone Academy has crossed a milestone that very few drone training organisations in the country can claim. To mark it, we are opening a limited window for the next intake at a benefit of up to Rs. 20,000.
         </p>
         <div class="hero-cta-row">
           <a href="#offer" class="btn-primary">
@@ -342,7 +342,10 @@ export default function Batches100Page() {
 
         <div class="offer-benefit">
           <div class="offer-benefit-line">Centennial benefit unlocked</div>
-          <div class="offer-benefit-amount">Rs. 12,000<span>off the full course fee</span></div>
+          <div class="offer-benefit-amount">Rs. 20,000<span>off the full course fee</span></div>
+          <div style="font-size: 13px; color: var(--mute); margin-top: 8px;">
+            Original Price: <span style="text-decoration: line-through;">Rs. 35,000</span> &middot; Offer Price: <strong>Rs. 15,000</strong>
+          </div>
         </div>
 
         <ul class="offer-includes">
@@ -369,7 +372,7 @@ export default function Batches100Page() {
 
         <div class="offer-benefit">
           <div class="offer-benefit-line">Centennial benefit unlocked</div>
-          <div class="offer-benefit-amount">Rs. 15,000<span>off the full course fee</span></div>
+          <div class="offer-benefit-amount">Rs. 18,000<span>off the full course fee</span></div>
         </div>
 
         <ul class="offer-includes">
@@ -381,6 +384,60 @@ export default function Batches100Page() {
         </ul>
 
         <a href="#register" data-category="Medium" class="offer-card-cta">Reserve a Medium Category seat</a>
+      </div>
+
+      <!-- TRAIN THE TRAINER -->
+      <div class="offer-card">
+        <div class="offer-card-tag">Train the Trainer Programme</div>
+        <h3 class="offer-card-title">Train the <em>Trainer (TTT)</em></h3>
+        <p class="offer-card-cat">Become a certified DGCA drone training instructor. Designed for experienced pilots who want to teach, mentor and build the next generation of drone professionals.</p>
+
+        <div class="offer-pricing">
+          <div class="offer-pay">Rs. 45,000</div>
+          <div class="offer-pay-label">full course fee</div>
+        </div>
+
+        <div class="offer-benefit">
+          <div class="offer-benefit-line">Centennial benefit unlocked</div>
+          <div class="offer-benefit-amount">Rs. 2,000<span>to register &amp; lock seat</span></div>
+        </div>
+
+        <ul class="offer-includes">
+          <li>DGCA-compliant Train the Trainer curriculum</li>
+          <li>Advanced theory, pedagogy and instructional techniques</li>
+          <li>Live flying assessment and evaluation standards</li>
+          <li>Access to IDA's trainer network and resources</li>
+          <li>Certification on successful completion</li>
+        </ul>
+
+        <a href="#register" data-category="TTT" class="offer-card-cta">Reserve a TTT seat</a>
+      </div>
+
+      <!-- TRAINER REFRESHMENT -->
+      <div class="offer-card">
+        <div class="offer-card-tag">Trainer Refreshment Programme</div>
+        <h3 class="offer-card-title">Trainer <em>Refreshment</em></h3>
+        <p class="offer-card-cat">Mandatory periodic refresher for certified drone trainers. Stay current with the latest DGCA regulations, updated syllabus and evolving industry standards.</p>
+
+        <div class="offer-pricing">
+          <div class="offer-pay">Rs. 15,000</div>
+          <div class="offer-pay-label">full course fee</div>
+        </div>
+
+        <div class="offer-benefit">
+          <div class="offer-benefit-line">Centennial benefit unlocked</div>
+          <div class="offer-benefit-amount">Rs. 2,000<span>to register &amp; lock seat</span></div>
+        </div>
+
+        <ul class="offer-includes">
+          <li>Latest DGCA regulatory updates for trainers</li>
+          <li>Refreshed instructional and evaluation standards</li>
+          <li>Industry developments and new drone technologies</li>
+          <li>Re-certification valid for the next training cycle</li>
+          <li>Compact 2-day intensive format</li>
+        </ul>
+
+        <a href="#register" data-category="TrainerRefresh" class="offer-card-cta">Reserve a Refreshment seat</a>
       </div>
     </div>
 
@@ -512,14 +569,28 @@ export default function Batches100Page() {
                 <input type="radio" name="category" value="Small" checked>
                 <div class="radio-card-inner">
                   <strong>Small Category</strong>
-                  <span>Up to 25 kg &middot; Rs. 12,000 benefit</span>
+                  <span>Up to 25 kg &middot; Rs. 20,000 benefit</span>
                 </div>
               </label>
               <label class="radio-card">
                 <input type="radio" name="category" value="Medium">
                 <div class="radio-card-inner">
                   <strong>Medium Category</strong>
-                  <span>25 to 150 kg &middot; Rs. 15,000 benefit</span>
+                  <span>25 to 150 kg &middot; Rs. 18,000 benefit</span>
+                </div>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="category" value="TTT">
+                <div class="radio-card-inner">
+                  <strong>Train the Trainer (TTT)</strong>
+                  <span>Full course &middot; Rs. 45,000</span>
+                </div>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="category" value="TrainerRefresh">
+                <div class="radio-card-inner">
+                  <strong>Trainer Refreshment</strong>
+                  <span>2-day intensive &middot; Rs. 15,000</span>
                 </div>
               </label>
             </div>
@@ -541,7 +612,7 @@ export default function Batches100Page() {
               <span>Registration amount</span>
               <strong>Rs. 2,000</strong>
             </div>
-            <div class="summary-note">Adjusted against course fee on joining. Centennial discount of Rs. 12,000 (Small) / Rs. 15,000 (Medium) applied to your final balance.</div>
+            <div class="summary-note">Adjusted against course fee on joining. Centennial discount of Rs. 20,000 (Small) / Rs. 18,000 (Medium) applied to your final balance.</div>
           </div>
 
           <button type="submit" id="payBtn" class="form-submit">
@@ -692,7 +763,7 @@ export default function Batches100Page() {
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
         </div>
-        <div class="faq-a">It counts towards your course fee. Rs. 2,000 is your registration. It is fully adjusted against the balance fee on the day you join the batch. The Rs. 12,000 or Rs. 15,000 benefit applies on the full course price.</div>
+        <div class="faq-a">It counts towards your course fee. Rs. 2,000 is your registration. It is fully adjusted against the balance fee on the day you join the batch. The Rs. 20,000 or Rs. 18,000 benefit applies on the full course price.</div>
       </div>
 
       <div class="faq-item">

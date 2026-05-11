@@ -222,7 +222,7 @@ const Header: React.FC = () => {
 
             <div className="hidden lg:flex items-center space-x-4 lg:ml-12">
               <button
-                onClick={() => handleNavigation('/offers')}
+                onClick={() => handleNavigation('/apply')}
                 className="bg-[#F15A24] text-white font-bold px-6 py-3 rounded-lg hover:bg-[#D64A1A] hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 text-sm"
               >
                 Apply for offers
@@ -355,7 +355,7 @@ const Header: React.FC = () => {
 
           <div className="p-6 border-t border-gray-200 bg-gray-50">
             <button
-              onClick={() => handleNavigation('/offers')}
+              onClick={() => handleNavigation('/apply')}
               className="w-full bg-[#F15A24] text-white font-bold px-6 py-4 rounded-lg hover:bg-[#D64A1A] hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 text-center text-lg"
             >
               Apply Now
