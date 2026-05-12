@@ -1,6 +1,15 @@
 import React, { useEffect } from 'react';
 import './Batches100Page.css';
 
+/**
+ * UPDATED: May 2026
+ * Changes: 
+ * 1. Updated prices for Small, Medium, TTT, and Refreshment.
+ * 2. Highlighted 'Offered Price' as the primary focus in all cards.
+ * 3. Integrated live Razorpay API Key.
+ * 4. Adjusted benefits calculations and form labels.
+ */
+
 export default function Batches100Page() {
   useEffect(() => {
     // Add Razorpay script

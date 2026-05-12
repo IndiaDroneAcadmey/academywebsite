@@ -50,7 +50,7 @@ function App() {
           <Route path="/video" element={<VideoPage />} />
           <Route path="/applyintern" element={<InternshipPage />} />
           <Route path="/applyworkshop" element={<WorkshopRegistrationPage />} />
-          <Route path="/9k2p5m8r1v4z7q0s3t6w" element={<Batches100Page />} />
+          <Route path="/9k2p5m8r1v4z7q0s3t6w" element={<Batches100Page />} /> {/* Untraceable path for Centennial 100 Batch Offer */}
         </Routes>
         <Footer />
       </div>
