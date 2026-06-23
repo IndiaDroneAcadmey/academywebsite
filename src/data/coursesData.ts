@@ -124,7 +124,7 @@ export const coursesData: Record<string, CourseData> = {
       },
       {
         question: 'Can I upgrade to medium Class later?',
-        answer: 'Yes, we offer a 3-day Medium Upgrade course for ₹65,000 + GST for existing small class license holders.'
+        answer: 'Yes, we offer a 3-day Medium Upgrade course for ₹30,000 + GST for existing small class license holders.'
       },
       {
         question: 'What jobs can I get with small class license?',
@@ -229,7 +229,7 @@ export const coursesData: Record<string, CourseData> = {
     heroImage: '/medium-upgrade.jpg',
     badge: 'Upgrade Course',
     badgeColor: 'bg-purple-600',
-    price: '₹45,000',
+    price: '₹30,000',
     gst: '+ 18% GST',
     duration: '3 Days',
     mode: 'Intensive Training',

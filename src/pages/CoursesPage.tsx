@@ -130,7 +130,7 @@ const CoursesPage: React.FC = () => {
       badgeColor: 'bg-purple-600',
       description: 'Upgrade from Small to Medium Class certification in just 3 days.',
       duration: '3 Days',
-      price: '₹45,000',
+      price: '₹30,000',
       gst: '+ 18% GST',
       level: 'Intermediate',
       icon: Award,

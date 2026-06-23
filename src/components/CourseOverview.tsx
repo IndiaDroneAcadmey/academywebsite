@@ -55,7 +55,7 @@ const courses = [
     title: 'Medium Upgrade',
     description: 'Upgrade your skills from Small Class to Medium Class drones (25kg to 50kg)',
     duration: '3 Days',
-    price: '₹45,000',
+    price: '₹30,000',
     gst: '+ 18% GST',
     image: '/medium-upgrade.jpg',
     features: ['Upgrade Training', 'Advanced Drone Ops', 'Medium Drone Certification'],
