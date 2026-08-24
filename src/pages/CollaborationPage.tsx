@@ -227,7 +227,7 @@ const CollaborationPage: React.FC = () => {
       fullAddress: 'Shaikpet, Hyderabad, Telangana',
       establishedYear: '1997',
       categoryTag: "PREMIER AUTONOMOUS WOMEN'S ENGINEERING COLLEGE",
-      logo: 'https://yt3.googleusercontent.com/lFu-hMBQM_c77aKzNlRMQ0ShnGo50m80UN_saNZrjWmcKXHFsviNlwWjttx9hF6uDiq8kT_1-w=s160-c-k-c0x00ffffff-no-rj',
+      logo: '/gnits-logo.png',
       officialBadge: 'Official India Drone Academy COE',
       accreditationText: 'Autonomous | Affiliated to JNTUH | NAAC A+ Accredited | NBA Accredited',
       accreditationSub: "Pioneering Telangana's First Women's Drone Pilot Certification & Precision Robotics Center of Excellence",
@@ -280,7 +280,7 @@ const CollaborationPage: React.FC = () => {
       fullAddress: 'Maisammaguda, Dhulapally, Hyderabad',
       establishedYear: '2005',
       categoryTag: 'AUTONOMOUS ENGINEERING INSTITUTION',
-      logo: 'https://mrce.in/assets/images/logo.png',
+      logo: '/mallareddy-logo.png',
       officialBadge: 'Official India Drone Academy COE',
       accreditationText: 'Autonomous | Affiliated to JNTUH | NAAC A Grade',
       accreditationSub: 'Advanced Aerial Robotics & Autonomous Navigation Center of Excellence',
@@ -332,7 +332,7 @@ const CollaborationPage: React.FC = () => {
       fullAddress: 'Gandipet, Hyderabad, Telangana',
       establishedYear: '1979',
       categoryTag: 'PREMIER AUTONOMOUS INSTITUTION',
-      logo: 'https://www.cbit.ac.in/wp-content/uploads/2023/04/CBIT-LOGO-2023.png',
+      logo: '/cbit-logo.png',
       officialBadge: 'Official India Drone Academy COE',
       accreditationText: 'Autonomous | Affiliated to JNTUH | NAAC A++ Accredited | NBA Accredited',
       accreditationSub: 'Pioneering Aerial Tech & Autonomous Systems Center of Excellence',
@@ -430,7 +430,7 @@ const CollaborationPage: React.FC = () => {
       fullAddress: 'Kukatpally, Hyderabad, Telangana',
       establishedYear: '1972',
       categoryTag: 'PREMIER STATE TECHNICAL UNIVERSITY',
-      logo: 'https://jntuh.ac.in/images/jntuhlogo.png',
+      logo: '/jntuh-logo.png',
       officialBadge: 'Official India Drone Academy COE',
       accreditationText: 'State University | NAAC A+ Grade | AICTE Approved',
       accreditationSub: 'University-Wide Drone Curriculum Integration & Innovation Hub',
@@ -498,7 +498,7 @@ const CollaborationPage: React.FC = () => {
       fullAddress: 'Gachibowli, Hyderabad, Telangana',
       establishedYear: '1998',
       categoryTag: 'PREMIER RESEARCH & COMPUTATIONAL INSTITUTE',
-      logo: 'data:image/png;base64,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',
+      logo: '/iiit-logo.png',
       officialBadge: 'Official India Drone Academy COE',
       accreditationText: 'Autonomous University | NAAC A Grade | AICTE Approved',
       accreditationSub: 'AI-Driven Autonomous Navigation & Drone Robotics Center of Excellence',
@@ -535,7 +535,7 @@ const CollaborationPage: React.FC = () => {
       fullAddress: 'Bachupally, Nizampet, Hyderabad',
       establishedYear: '1995',
       categoryTag: 'PREMIER AUTONOMOUS ENGINEERING COLLEGE',
-      logo: 'https://www.vnrvjiet.ac.in/assets/vnrvjiet-full-logo-C1XVE-Db.png',
+      logo: '/vnrvjiet-logo.png',
       officialBadge: 'Official India Drone Academy COE',
       accreditationText: 'Autonomous | Affiliated to JNTUH | NAAC A++ Grade | NBA Accredited',
       accreditationSub: 'UAV Automation & Precision Engineering Center of Excellence',
@@ -646,6 +646,7 @@ const CollaborationPage: React.FC = () => {
       fullAddress: 'Yamnampet, Ghatkesar, Hyderabad',
       establishedYear: '1997',
       categoryTag: 'PREMIER AUTONOMOUS ENGINEERING COLLEGE',
+      logo: '/snist-logo.png',
       officialBadge: 'Official India Drone Academy COE',
       accreditationText: 'Autonomous | Affiliated to JNTUH | NAAC A+ Grade | NBA Accredited',
       accreditationSub: 'Center of Excellence for Drone Avionics & Smart Mobility',
@@ -1007,22 +1008,22 @@ const CollaborationPage: React.FC = () => {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="text-center p-4 rounded-2xl bg-gradient-to-b from-green-50/50 to-transparent border border-green-100/50">
-                <div className="w-14 h-14 bg-[#26A65B] bg-opacity-10 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                  <Star className="w-7 h-7 text-[#26A65B]" />
+                <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-3 overflow-hidden bg-white shadow-sm border border-gray-100">
+                  <img src="/gnits-logo.png" alt="GNITS Logo" className="w-12 h-12 object-contain" />
                 </div>
                 <h4 className="font-bold text-gray-900 mb-1 text-base">Narayanamma Institute</h4>
                 <p className="text-gray-600 text-sm leading-relaxed">650+ female students trained in drone technology with 100% placement success</p>
               </div>
               <div className="text-center p-4 rounded-2xl bg-gradient-to-b from-orange-50/50 to-transparent border border-orange-100/50">
-                <div className="w-14 h-14 bg-[#F15A24] bg-opacity-10 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                  <Trophy className="w-7 h-7 text-[#F15A24]" />
+                <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-3 overflow-hidden bg-white shadow-sm border border-gray-100">
+                  <img src="/mallareddy-logo.png" alt="Mallareddy College Logo" className="w-12 h-12 object-contain" />
                 </div>
                 <h4 className="font-bold text-gray-900 mb-1 text-base">Mallareddy College</h4>
                 <p className="text-gray-600 text-sm leading-relaxed">Joint certification program with dedicated drone lab setup on campus</p>
               </div>
               <div className="text-center p-4 rounded-2xl bg-gradient-to-b from-blue-50/50 to-transparent border border-blue-100/50">
-                <div className="w-14 h-14 bg-blue-100/80 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                  <Award className="w-7 h-7 text-blue-600" />
+                <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-3 overflow-hidden bg-white shadow-sm border border-gray-100">
+                  <img src="/jntuh-logo.png" alt="JNTUH Logo" className="w-12 h-12 object-contain" />
                 </div>
                 <h4 className="font-bold text-gray-900 mb-1 text-base">JNTUH</h4>
                 <p className="text-gray-600 text-sm leading-relaxed">University-wide drone curriculum integration across multiple engineering branches</p>
