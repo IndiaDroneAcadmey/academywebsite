@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import WhatsAppChatButton from './components/WhatsAppChatButton';
 import HomePage from './pages/HomePage';
 import CoursesPage from './pages/CoursesPage';
 import CourseDetailPage from './pages/CourseDetailPage';
@@ -53,6 +54,7 @@ function App() {
           <Route path="/9k2p5m8r1v4z7q0s3t6w" element={<Batches100Page />} /> {/* Untraceable path for Centennial 100 Batch Offer */}
         </Routes>
         <Footer />
+        <WhatsAppChatButton />
       </div>
     </Router>
   );
