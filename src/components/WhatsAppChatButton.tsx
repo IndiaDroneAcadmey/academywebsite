@@ -1,6 +1,6 @@
 import React from 'react';
 
-const WHATSAPP_URL = 'https://wa.me/919494729052?text=Hello';
+const WHATSAPP_URL = 'https://wa.me/9188883344?text=Hello';
 
 const WhatsAppChatButton: React.FC = () => {
   return (
