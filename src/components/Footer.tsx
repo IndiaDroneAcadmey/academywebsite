@@ -75,7 +75,7 @@ const socialLinks = [
           {/* Company Info */}
           <div>
             <button onClick={() => handleNavigation('/')} className="flex items-center mb-4">
-              <img src="/logo1.png" alt="India Drone Academy Logo" className="h-14" />
+              <img src="/India-Drone-Academy-White.png" alt="India Drone Academy Logo" className="h-14" />
             </button>
             <h3 className="text-xl font-bold mb-2">India Drone Academy</h3>
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
