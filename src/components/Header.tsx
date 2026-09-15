@@ -83,7 +83,7 @@ const Header: React.FC = () => {
             <div className="flex-shrink-0">
               <button onClick={() => handleNavigation('/')} className="flex items-center">
                 <img
-                  src="/IDA.png"
+                  src="/India-Drone-Academy-Black.png"
                   alt="India Drone Academy Logo"
                   className="h-14 transition-all duration-300"
                 />
