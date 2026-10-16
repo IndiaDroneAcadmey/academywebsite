@@ -131,6 +131,17 @@ const CollaborationPage: React.FC = () => {
     };
   }, [selectedPartner]);
 
+  React.useEffect(() => {
+    if (!selectedPartner || selectedPartner.images.length < 2 || showFullGallery) return;
+
+    const imageCount = selectedPartner.images.length;
+    const timer = window.setInterval(() => {
+      setCurrentImageIndex(prev => (prev + 1) % imageCount);
+    }, 2500);
+
+    return () => window.clearInterval(timer);
+  }, [selectedPartner, showFullGallery, currentImageIndex]);
+
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const criteriaList = [
@@ -399,7 +410,7 @@ const CollaborationPage: React.FC = () => {
       fullAddress: 'Gandipet, Hyderabad, Telangana',
       establishedYear: '1997',
       categoryTag: 'PREMIER TECHNICAL INSTITUTION',
-      logo: 'https://media.licdn.com/dms/image/v2/C560BAQEu9UePvcrm9Q/company-logo_200_200/company-logo_200_200/0/1630642942090?e=1788998400&v=beta&t=ej7uzP_PIcmiY19ZmVGFpN4nwDUs3m7Of2Q_0ddDh1c',
+      logo: '/mgit-logo.png',
       officialBadge: 'Official India Drone Academy COE',
       accreditationText: 'Autonomous | Affiliated to JNTUH | NAAC A Grade',
       accreditationSub: 'Center of Excellence for Aerial Robotics & GIS Photogrammetry',
@@ -576,7 +587,15 @@ const CollaborationPage: React.FC = () => {
       officialBadge: 'Official India Drone Academy COE',
       accreditationText: 'Autonomous | Affiliated to JNTUH | NAAC A+ Grade | NBA Accredited',
       accreditationSub: 'Center of Excellence for Drone Dynamics & Smart Agriculture',
-      images: ['/didi-agri.jpg', '/drone-training-bg.jpg'],
+      images: [
+        '/CMR/WhatsApp Image 2026-10-16 at 12.00.10 PM.jpeg',
+        '/CMR/WhatsApp Image 2026-10-16 at 12.00.10 PM (1).jpeg',
+        '/CMR/PXL_20261015_094510826.RAW-01.jpg',
+        '/CMR/IMG_9639.JPG',
+        '/CMR/IMG_9670.JPG',
+        '/CMR/IMG_9700.JPG',
+        '/CMR/IMG_9716.JPG'
+      ],
       stats: [
         { label: 'STUDENTS TRAINED', number: '420+', subtext: 'Skilled in UAV electronics & aerial mapping' },
         { label: 'CAMPUS FLEET', number: '9 Drones', subtext: 'Agri-sprayers, survey copters & micro drones' },
@@ -609,7 +628,7 @@ const CollaborationPage: React.FC = () => {
       fullAddress: 'Bachupally, Kukatpally, Hyderabad',
       establishedYear: '1997',
       categoryTag: 'PREMIER AUTONOMOUS ENGINEERING COLLEGE',
-      logo: 'https://media.licdn.com/dms/image/v2/C510BAQGjvSB-HEAmUQ/company-logo_200_200/company-logo_200_200/0/1631322528024?e=1788998400&v=beta&t=qumSe9D8Be5ehXORJ-o7QBwtVkPvpa-c2gkrQJ0de1s',
+      logo: '/griet-logo.png',
       officialBadge: 'Official India Drone Academy COE',
       accreditationText: 'Autonomous | Affiliated to JNTUH | NAAC A++ Grade | NBA Accredited',
       accreditationSub: 'Center of Excellence for Aerial Robotics, AI & GIS Tech',
@@ -1093,7 +1112,7 @@ const CollaborationPage: React.FC = () => {
                   <img
                     src={selectedPartner.images[currentImageIndex] || '/didi-agri.jpg'}
                     alt={`${selectedPartner.name} photo ${currentImageIndex + 1}`}
-                    className="max-h-[380px] sm:max-h-[480px] w-full object-contain transition-all duration-300"
+                    className="max-h-[380px] sm:max-h-[480px] w-full object-contain transition-all duration-200"
                   />
 
                   {/* Navigation Arrows */}
@@ -1185,7 +1204,7 @@ const CollaborationPage: React.FC = () => {
                   <img
                     src={selectedPartner.images[currentImageIndex] || '/didi-agri.jpg'}
                     alt={selectedPartner.name}
-                    className="w-full h-full object-contain opacity-90 transition-all duration-500 cursor-pointer"
+                    className="w-full h-full object-contain opacity-90 transition-all duration-300 cursor-pointer"
                     onClick={() => setShowFullGallery(true)}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent pointer-events-none" />
