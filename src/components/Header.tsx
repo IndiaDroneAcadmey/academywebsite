@@ -85,7 +85,7 @@ const Header: React.FC = () => {
                 <img
                   src="/India-Drone-Academy-Black.png"
                   alt="India Drone Academy Logo"
-                  className="h-14 transition-all duration-300"
+                  className="h-20 w-auto transition-all duration-300"
                 />
               </button>
             </div>
@@ -253,7 +253,7 @@ const Header: React.FC = () => {
       >
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between p-6 border-b border-gray-200 bg-gray-50">
-            <img src="/India-Drone-Academy-Black.png" alt="India Drone Academy Logo" className="h-8" />
+            <img src="/India-Drone-Academy-Black.png" alt="India Drone Academy Logo" className="h-12 w-auto" />
             <button
               onClick={closeMenu}
               className="p-2 rounded-md hover:bg-gray-200 transition-colors duration-200"
